@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 28, 2021 at 02:50 PM
+-- Generation Time: Oct 28, 2021 at 03:58 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -24,30 +24,6 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Banks`
---
-
-CREATE TABLE `Banks` (
-  `id` int(100) NOT NULL,
-  `Axis` varchar(100) NOT NULL,
-  `BOI` varchar(100) NOT NULL,
-  `SBI` varchar(100) NOT NULL,
-  `Syndicate` varchar(100) NOT NULL,
-  `INDUS` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `Banks`
---
-
-INSERT INTO `Banks` (`id`, `Axis`, `BOI`, `SBI`, `Syndicate`, `INDUS`) VALUES
-(1, 'Ajmer', 'Jaipur', 'Delhi', 'Dehradun', 'Gujarat'),
-(3, 'sd', 'q', 'w', 'e', 'r'),
-(4, 'sd', 'ty', 'ui', 'qw', 'pl');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `E-Commerce`
 --
 
@@ -55,16 +31,25 @@ CREATE TABLE `E-Commerce` (
   `id` int(100) NOT NULL,
   `Name` varchar(100) NOT NULL,
   `E-mail` varchar(100) NOT NULL,
-  `Mobile` int(100) NOT NULL,
-  `No. of Visits` int(100) NOT NULL
+  `No. of Visits` int(100) NOT NULL,
+  `mobile` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `E-Commerce`
 --
 
-INSERT INTO `E-Commerce` (`id`, `Name`, `E-mail`, `Mobile`, `No. of Visits`) VALUES
-(1, 'hg', 'gh', 666666666, 2);
+INSERT INTO `E-Commerce` (`id`, `Name`, `E-mail`, `No. of Visits`, `mobile`) VALUES
+(1, 'raju', 'raju@gmail.com', 5, 946382166),
+(2, 'tarun', 'tarun@gmail', 8, 946382166),
+(3, 'riya', 'riya@gmail', 2, 946382166),
+(4, 'pankaj', 'pankaj@gmail.com', 4, 946382166),
+(5, 'ram', 'ram@gmail.com', 5, 946382166),
+(6, 'lokesh', 'lokesh@gmail.com', 2, 946382166),
+(7, 'neha', 'neha@gmail.com', 5, 946382166),
+(8, 'rahu', 'rahu@gmail.com', 5, 946382166),
+(9, 'jatin', 'jatn@gmail.com', 5, 946382166),
+(10, 'lalit', 'lalit@gmail.com', 5, 946382166);
 
 -- --------------------------------------------------------
 
@@ -140,6 +125,22 @@ CREATE TABLE `gadgets` (
   `dell` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `gadgets`
+--
+
+INSERT INTO `gadgets` (`id`, `sony`, `philips`, `hp`, `dell`) VALUES
+(1, 'tv-50', 'tv-4', 'tv-63', 'tv-78'),
+(2, 'lapy-1', 'lapy-2', 'lapy-3', 'lapy-4'),
+(3, 'remot-1', 'remote-2', 'remote-3', 'remote-4'),
+(4, 'base-1', 'base-2', 'base-3', 'base-4'),
+(5, 'music system-1', 'music system-2', 'music system-3', 'music system-4'),
+(6, 'watch-1', 'watch-2', 'watch-3', 'watch-4'),
+(7, 'mobile-1', 'mobile-2', 'mobile-3', 'mobile-4'),
+(8, 'keyboard-1', 'keyboard-2', 'keyboard-3', 'keyboard-4'),
+(9, 'mouse-1', 'mouse-2', 'mouse-3', 'mouse-4'),
+(10, 'bottle-1', 'bottle-2', 'bottle-3', 'bottle-4');
+
 -- --------------------------------------------------------
 
 --
@@ -204,6 +205,36 @@ INSERT INTO `maruti_suzuki` (`id`, `Model`, `fuel`, `Avg`, `cc`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `people`
+--
+
+CREATE TABLE `people` (
+  `id` int(11) NOT NULL,
+  `Hight` int(11) NOT NULL,
+  `wight` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `gender` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `people`
+--
+
+INSERT INTO `people` (`id`, `Hight`, `wight`, `age`, `gender`) VALUES
+(1, 6, 60, 25, 'male'),
+(2, 6, 50, 24, 'female'),
+(3, 6, 58, 36, 'male'),
+(4, 5, 51, 42, 'male'),
+(5, 6, 62, 37, 'female'),
+(6, 5, 48, 16, 'female'),
+(7, 5, 39, 24, 'female'),
+(8, 6, 58, 42, 'male'),
+(9, 6, 60, 42, 'male'),
+(10, 6, 62, 25, 'female');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `school`
 --
 
@@ -214,6 +245,22 @@ CREATE TABLE `school` (
   `mobile` int(11) NOT NULL,
   `Address` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `school`
+--
+
+INSERT INTO `school` (`id`, `name`, `branch`, `mobile`, `Address`) VALUES
+(1, 'ryan', 'jaipur', 946382166, 'jaipur'),
+(2, 'xaviers', 'jaipur', 946382166, 'rajasthan'),
+(3, 'doon', 'ajmer', 946382166, 'taranagar'),
+(4, 'anslems', 'jhodpur', 946382166, 'rajsthan'),
+(5, 'nirza modi', 'behror', 946382166, 'taranagar jhotwara'),
+(6, 'brightfuture', 'agra', 946382166, 'ramnagar'),
+(7, 'sanskar', 'jaipur', 946382166, 'agra'),
+(8, 'saint', 'jhodpur', 946382166, 'jaipur'),
+(9, 'doon2', 'agra', 946382166, 'ajmer'),
+(10, 'brightland', 'jaipur', 946382166, 'taranagar');
 
 -- --------------------------------------------------------
 
@@ -260,13 +307,28 @@ CREATE TABLE `twowheeler` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data for table `twowheeler`
+--
+
+INSERT INTO `twowheeler` (`id`, `company`, `model`, `colour`, `cc`) VALUES
+(1, 'suzuki', 'lxi', 'red', 1000),
+(2, 'hundayi', 'i20', 'black', 1200),
+(3, 'ford', 'foigo', 'white', 1000),
+(5, 'tata', 'nano', 'blue', 800),
+(6, 'maruti', 'ciaz', 'white', 1200),
+(7, 'tata', 'tiago', 'black', 1200),
+(8, 'hundayi', 'santro', 'white', 1000),
+(9, 'mahindra', 'xuv-500', 'white', 1200),
+(10, 'hero', 'splendor', 'black', 100);
+
+--
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Banks`
+-- Indexes for table `E-Commerce`
 --
-ALTER TABLE `Banks`
+ALTER TABLE `E-Commerce`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -285,6 +347,18 @@ ALTER TABLE `fourwheeler`
 -- Indexes for table `gadgets`
 --
 ALTER TABLE `gadgets`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `maruti_suzuki`
+--
+ALTER TABLE `maruti_suzuki`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `people`
+--
+ALTER TABLE `people`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -310,12 +384,6 @@ ALTER TABLE `twowheeler`
 --
 
 --
--- AUTO_INCREMENT for table `Banks`
---
-ALTER TABLE `Banks`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
 -- AUTO_INCREMENT for table `Employee`
 --
 ALTER TABLE `Employee`
@@ -331,13 +399,19 @@ ALTER TABLE `fourwheeler`
 -- AUTO_INCREMENT for table `gadgets`
 --
 ALTER TABLE `gadgets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `people`
+--
+ALTER TABLE `people`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `school`
 --
 ALTER TABLE `school`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `table`
@@ -349,7 +423,7 @@ ALTER TABLE `table`
 -- AUTO_INCREMENT for table `twowheeler`
 --
 ALTER TABLE `twowheeler`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
