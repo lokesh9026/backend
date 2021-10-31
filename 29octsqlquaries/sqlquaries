@@ -1,0 +1,50 @@
+SELECT Dept FROM `sunmax_company`;
+SELECT * FROM `sunmax_company`;
+SELECT name , Dept FROM `sunmax_company`;
+SELECT name ,salary FROM `sunmax_company` WHERE 1;
+SELECT COUNT(name),SUM(salary) FROM `sunmax_company` WHERE 1;
+six
+seven
+SELECT name,salary FROM `sunmax_company` WHERE salary>1200;
+
+SELECT COUNT(name),name FROM `sunmax_company` WHERE commission!=0;
+SELECT name,salary FROM `sunmax_company` WHERE Dept="Quality" AND salary>1500;
+SELECT * FROM `sunmax_company` WHERE DOJ>2015;
+
+
+SELECT CURDATE()
+
+
+SELECT name FROM `sunmax_company` WHERE Dept='Quality' OR Dept='HR' OR Dept='Customer care';
+SELECT name FROM `sunmax_company` WHERE name LIKE 'A%';
+SELECT name FROM `sunmax_company` WHERE name LIKE '%l';
+SELECT name FROM `sunmax_company` WHERE name LIKE '_n%';
+SELECT name FROM `sunmax_company`WHERE length(name)=5;
+SELECT name,Dept FROM `sunmax_company` WHERE Dept NOT LIKE 'HR';
+SELECT name , Dept FROM `sunmax_company` WHERE Dept NOT IN ('HR' ,'Quality');
+
+SELECT COUNT(id) FROM `sunmax_company` WHERE 1;
+SELECT SUM(salary) FROM `sunmax_company` WHERE 1;
+SELECT MAX(salary) FROM `sunmax_company` WHERE 1;
+SELECT MIN(salary) FROM `sunmax_company` WHERE 1;
+SELECT AVG(salary) FROM `sunmax_company` WHERE 1;
+SELECT MAX(salary) FROM `sunmax_company` WHERE Desig='Quality';
+SELECT MAX(salary) FROM `sunmax_company` WHERE Dept='HR';
+SELECT MAX(salary) FROM `sunmax_company` WHERE Dept='HR';
+SELECT AVG(salary) FROM `sunmax_company` WHERE Desig='Engineer';
+SELECT AVG(salary) FROM `sunmax_company` WHERE Dept='Quality' AND Desig='Engineer';
+SELECT name,Desig,salary FROM `sunmax_company` ORDER BY salary ASC;
+SELECT name,salary FROM `sunmax_company` ORDER BY salary DESC;
+SELECT * FROM `sunmax_company` ORDER BY name;
+select id, name, Dept, salary from sunmax_company order by name, Deptno, salary;
+select name, salary*12 from sunmax_company order by salary desc;
+
+select Dept, count (Dept) from sunmax_company group by Dept;
+select Desig, count (Desig) from emp group by Desig;
+select Dept, sum (salary) from sunmax_company group by Dept;
+select Dept, max (salary) from sunmax_company group by Dept;
+select Desig, sum (salary) from sunmax_company group by Desig;
+ select Desig, min (salary) from sunmax_company group by Desig;
+
+
+
