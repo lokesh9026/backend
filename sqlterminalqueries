@@ -1,0 +1,616 @@
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ Start xampp like sudo /opt/lampp/lampp star
+
+Command 'Start' not found, did you mean:
+
+  command 'tart' from deb tart (3.10-1build1)
+
+Try: sudo apt install <deb name>
+
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ type this /opt/lampp/bin/mysql -u root -p
+bash: type: this: not found
+/opt/lampp/bin/mysql is /opt/lampp/bin/mysql
+bash: type: -u: not found
+bash: type: root: not found
+bash: type: -p: not found
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ sudo /opt/lampp/bin/mysql -u root -p
+[sudo] password for lokesh: 
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ sudo /opt/lampp/bin/mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ YES
+YES: command not found
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ sudo /opt/lampp/bin/mysql -u root -p
+Enter password: 
+ERROR 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ ^C
+lokesh@lokesh-pc:/opt/lampp/htdocs/PDO$ sudo /opt/lampp/bin/mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 671
+Server version: 10.4.21-MariaDB Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> 
+MariaDB [(none)]> \H
+ERROR: Unknown command '\H'.
+    -> \h
+
+General information about MariaDB can be found at
+http://mariadb.org
+
+List of all client commands:
+Note that all text commands must be first on line and end with ';'
+?         (\?) Synonym for `help'.
+clear     (\c) Clear the current input statement.
+connect   (\r) Reconnect to the server. Optional arguments are db and host.
+delimiter (\d) Set statement delimiter.
+edit      (\e) Edit command with $EDITOR.
+ego       (\G) Send command to MariaDB server, display result vertically.
+exit      (\q) Exit mysql. Same as quit.
+go        (\g) Send command to MariaDB server.
+help      (\h) Display this help.
+nopager   (\n) Disable pager, print to stdout.
+notee     (\t) Don't write into outfile.
+pager     (\P) Set PAGER [to_pager]. Print the query results via PAGER.
+print     (\p) Print current command.
+prompt    (\R) Change your mysql prompt.
+quit      (\q) Quit mysql.
+rehash    (\#) Rebuild completion hash.
+source    (\.) Execute an SQL script file. Takes a file name as an argument.
+status    (\s) Get status information from the server.
+system    (\!) Execute a system shell command.
+tee       (\T) Set outfile [to_outfile]. Append everything into given outfile.
+use       (\u) Use another database. Takes database name as argument.
+charset   (\C) Switch to another charset. Might be needed for processing binlog with multi-byte charsets.
+warnings  (\W) Show warnings after every statement.
+nowarning (\w) Don't show warnings after every statement.
+
+For server side help, type 'help contents'
+
+    -> show databases
+    -> show databases
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\H
+
+show databases
+show databases' at line 1
+MariaDB [(none)]> show databases
+    -> show databases
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'show databases' at line 2
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| ecomm              |
+| firstdatabase      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| project            |
+| test               |
++--------------------+
+9 rows in set (0.097 sec)
+
+MariaDB [(none)]> creat database if not exists db1
+    -> creat database if not exists db1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'creat database if not exists db1
+creat database if not exists db1' at line 1
+MariaDB [(none)]> creat database if not exists db1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'creat database if not exists db1' at line 1
+MariaDB [(none)]> CREAT DATABASE IF NOT EXIST db1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREAT DATABASE IF NOT EXIST db1' at line 1
+MariaDB [(none)]> CREATE DATABASE IF NOT EXIST db1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'EXIST db1' at line 1
+MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS db1;
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| college            |
+| db1                |
+| ecomm              |
+| firstdatabase      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| project            |
+| test               |
++--------------------+
+10 rows in set (0.001 sec)
+
+MariaDB [(none)]> use db1;
+Database changed
+MariaDB [db1]> CREATE TABLE IF NOT EXISTS tb1(
+    -> CREATE TABLE IF NOT EXISTS tb1( col1 INT, COL2 varchar(20),PRIMARY KEY (col1));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'CREATE TABLE IF NOT EXISTS tb1( col1 INT, COL2 varchar(20),PRIMARY KEY (col1))' at line 2
+MariaDB [db1]> CREATE TABLE IF NOT EXISTS tb1( col1 INT, COL2 varchar(20),PRIMARY KEY (col1));
+Query OK, 0 rows affected (5.328 sec)
+
+MariaDB [db1]> SHOW TABLES;
++---------------+
+| Tables_in_db1 |
++---------------+
+| tb1           |
++---------------+
+1 row in set (0.000 sec)
+
+MariaDB [db1]> DESC tb1;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| col1  | int(11)     | NO   | PRI | NULL    |       |
+| COL2  | varchar(20) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+2 rows in set (0.087 sec)
+
+MariaDB [db1]> INSERT INTO tb1(col1,COL2)
+    -> VALUES(1,"value1"),
+    -> (2,"value2");
+Query OK, 2 rows affected (0.203 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+MariaDB [db1]> SELECT * FROM tb1;
++------+--------+
+| col1 | COL2   |
++------+--------+
+|    1 | value1 |
+|    2 | value2 |
++------+--------+
+2 rows in set (0.001 sec)
+
+MariaDB [db1]> SELECT COL2 FROM tb1;
++--------+
+| COL2   |
++--------+
+| value1 |
+| value2 |
++--------+
+2 rows in set (0.000 sec)
+
+MariaDB [db1]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| PDO                |
+| college            |
+| db1                |
+| ecomm              |
+| firstdatabase      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| project            |
+| test               |
++--------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [db1]> use firstdatabase
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [firstdatabase]> DESC sunmax_company;
++------------+---------------+------+-----+---------+----------------+
+| Field      | Type          | Null | Key | Default | Extra          |
++------------+---------------+------+-----+---------+----------------+
+| id         | int(11)       | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(100)  | NO   |     | NULL    |                |
+| salary     | bigint(100)   | NO   |     | NULL    |                |
+| Exps       | varchar(100)  | NO   |     | NULL    |                |
+| Dept       | varchar(100)  | NO   |     | NULL    |                |
+| commission | varchar(2555) | YES  |     | NULL    |                |
+| DOJ        | varchar(1000) | YES  |     | NULL    |                |
+| Desig      | varchar(100)  | YES  |     | NULL    |                |
++------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.002 sec)
+
+MariaDB [firstdatabase]> INSERT INTO sunmax_company(id,name,salary,Exps,Dept,commission,DOJ,Desig VALUES(55,'ajay',20000,'5yrs','production',0,'2003','head');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VALUES(55,'ajay',20000,'5yrs','production',0,'2003','head')' at line 1
+MariaDB [firstdatabase]> INSERT INTO sunmax_company(id,name,salary,Exps,Dept,commission,DOJ,Desig VALUES(55,'ajay',20000,'5yrs','production','0','2003','head');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VALUES(55,'ajay',20000,'5yrs','production','0','2003','head')' at line 1
+MariaDB [firstdatabase]> INSERT INTO sunmax_company(name,salary,Exps,Dept,commission,DOJ,Desig VALUES('ajay',20000,'5yrs','production','0','2003','head');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VALUES('ajay',20000,'5yrs','production','0','2003','head')' at line 1
+MariaDB [firstdatabase]> INSERT INTO sunmax_company(name,salary,Exps,Dept,commission,DOJ,Desig VALUES('ajay',20000,'5yrs','production','0','2003','head');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'VALUES('ajay',20000,'5yrs','production','0','2003','head')' at line 1
+MariaDB [firstdatabase]> update sunmax_company set name='Ram' where id=1;
+Query OK, 0 rows affected (0.044 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
+MariaDB [firstdatabase]> update sunmax_company set name='shyam' where id=1;
+Query OK, 1 row affected (0.075 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+MariaDB [firstdatabase]> delete from sunmax_company where id=4;
+Query OK, 1 row affected (0.093 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company;
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
+|  5 | Anuj   |  50000 | 3yrs | maintenance   | 250        | 2006 | GET             |
+|  6 | Anil   |  60000 | 3yrs | Quality       | 160        | 2020 | Engineer        |
++----+--------+--------+------+---------------+------------+------+-----------------+
+5 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select Distinct Exps from sunmax_company;
++------+
+| Exps |
++------+
+| 5yrs |
+| 3    |
+| 3yrs |
++------+
+3 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where id=3 and name='Mukesh';
++----+--------+--------+------+---------------+------------+------+----------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig    |
++----+--------+--------+------+---------------+------------+------+----------+
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer |
++----+--------+--------+------+---------------+------------+------+----------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where id=4 and name='Mukesh';
+Empty set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where name in ('Aman','Mukesh');
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
++----+--------+--------+------+---------------+------------+------+-----------------+
+2 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where name not in ('Mukesh');
++----+-------+--------+------+-------------+------------+------+-----------------+
+| id | name  | salary | Exps | Dept        | commission | DOJ  | Desig           |
++----+-------+--------+------+-------------+------------+------+-----------------+
+|  1 | shyam |  15000 | 5yrs | HR          | 400        | 2003 | Trainee         |
+|  2 | Aman  |  30000 | 3    | Quality     | 100        | 2000 | Junior Engineer |
+|  5 | Anuj  |  50000 | 3yrs | maintenance | 250        | 2006 | GET             |
+|  6 | Anil  |  60000 | 3yrs | Quality     | 160        | 2020 | Engineer        |
++----+-------+--------+------+-------------+------------+------+-----------------+
+4 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where id between 1 and 4;
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
++----+--------+--------+------+---------------+------------+------+-----------------+
+3 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * fron sunmax_company where name like "M%";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'fron sunmax_company where name like "M%"' at line 1
+MariaDB [firstdatabase]> select * fron sunmax_company where name like "a%";
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'fron sunmax_company where name like "a%"' at line 1
+MariaDB [firstdatabase]> select * from sunmax_company where name like "M%";
++----+--------+--------+------+---------------+------------+------+----------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig    |
++----+--------+--------+------+---------------+------------+------+----------+
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer |
++----+--------+--------+------+---------------+------------+------+----------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where name like "h%";
+Empty set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company where name like "%h";
++----+--------+--------+------+---------------+------------+------+----------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig    |
++----+--------+--------+------+---------------+------------+------+----------+
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer |
++----+--------+--------+------+---------------+------------+------+----------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company limit 4;
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
+|  5 | Anuj   |  50000 | 3yrs | maintenance   | 250        | 2006 | GET             |
++----+--------+--------+------+---------------+------------+------+-----------------+
+4 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select * from sunmax_company limit 2;
++----+-------+--------+------+---------+------------+------+-----------------+
+| id | name  | salary | Exps | Dept    | commission | DOJ  | Desig           |
++----+-------+--------+------+---------+------------+------+-----------------+
+|  1 | shyam |  15000 | 5yrs | HR      | 400        | 2003 | Trainee         |
+|  2 | Aman  |  30000 | 3    | Quality | 100        | 2000 | Junior Engineer |
++----+-------+--------+------+---------+------------+------+-----------------+
+2 rows in set (0.001 sec)
+
+
+MariaDB [firstdatabase]> SELECT * FROM sunmax_company ORDER BY name asc;
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  6 | Anil   |  60000 | 3yrs | Quality       | 160        | 2020 | Engineer        |
+|  5 | Anuj   |  50000 | 3yrs | maintenance   | 250        | 2006 | GET             |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
++----+--------+--------+------+---------------+------------+------+-----------------+
+5 rows in set (0.021 sec)
+
+MariaDB [firstdatabase]> SELECT * FROM sunmax_company ORDER BY name desc;
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
+|  5 | Anuj   |  50000 | 3yrs | maintenance   | 250        | 2006 | GET             |
+|  6 | Anil   |  60000 | 3yrs | Quality       | 160        | 2020 | Engineer        |
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
++----+--------+--------+------+---------------+------------+------+-----------------+
+5 rows in set (0.001 sec)
+
+
+
+MariaDB [firstdatabase]> select name , sum(commission) as "total commission" from sunmax_company group by name having sum(commission)>200;
++-------+------------------+
+| name  | total commission |
++-------+------------------+
+| Anuj  |              250 |
+| shyam |              400 |
++-------+------------------+
+2 rows in set (0.020 sec)
+
+MariaDB [firstdatabase]> select name , sum(commission) as "total commission" from sunmax_company group by name select name ,min(commission) as "minimum commission" from sunmax_company group by name;
+
+MariaDB [firstdatabase]> select max(commission) from sunmax_company;
++-----------------+
+| max(commission) |
++-----------------+
+| 400             |
++-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select min(commission) from sunmax_company;
++-----------------+
+| min(commission) |
++-----------------+
+| 100             |
++-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select avg(commission) from sunmax_company;
++-----------------+
+| avg(commission) |
++-----------------+
+|             222 |
++-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select count(commission) from sunmax_company;
++-------------------+
+| count(commission) |
++-------------------+
+|                 5 |
++-------------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select sum(commission) from sunmax_company;
++-----------------+
+| sum(commission) |
++-----------------+
+|            1110 |
++-----------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> select id as id ,name as customer from sunmax_company;
++----+----------+
+| id | customer |
++----+----------+
+|  1 | shyam    |
+|  2 | Aman     |
+|  3 | Mukesh   |
+|  5 | Anuj     |
+|  6 | Anil     |
++----+----------+
+5 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> 
+
+
+
+MariaDB [firstdatabase]> select name, sum(commission) as "total commission" from sunmax_company group by name; select name, min(commission) as "minimum commission" from sunmax_company group by name;
++--------+------------------+
+| name   | total commission |
++--------+------------------+
+| Aman   |              100 |
+| Anil   |              160 |
+| Anuj   |              250 |
+| Mukesh |              200 |
+| shyam  |              400 |
++--------+------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select name, sum(commission) as "total commission" from sunmax_company group by name; select name, min(commission) as "minimum commission" from sunmax_company group by name;
++--------+------------------+
+| name   | total commission |n(commission) as "minimum commission" from sunmax_company group by n
++--------+------------------+
+| Aman   |              100 |
+| Anil   |              160 |
+| Anuj   |              250 |
+| Mukesh |              200 |
+| shyam  |              400 
+5 rows in set (0.001 sec)id,e.name,o.email from sunmax_company e join details o on e.id=o.id join commission so on e.commission=o.emailmail e join
++--------+--------------------+
+| name   | minimum commission |
++--------+--------------------+
+| Aman   | 100                |
+| Anil   | 160                |
+| Anuj   | 250                |
+| Mukesh | 200                |
+| shyam  | 400                |
+MariaDB [firstdatabase]> select name, sum(commission) as "total commission" from sunmax_company group by name; select name, min(commission) as "minimum commission" from sunmax_company group by name;
++--------+------------------+ect name, min(commission) as "minimum commission" from s
+| name   | total commission |
++--------+------------------+
+| Aman   |              100 |
+| Anil   |              160 |
+| Anuj   |              250 |
+| Mukesh |              200 |
+| shyam  |              400 |
++--------+------------------+
+5 rows in set (0.001 sec)
+
++--------+--------------------+
+| name   | minimum commission |
++--------+--------------------+
+| Aman   | 100                |
+| Anil   | 160                |
+| Anuj   | 250                |
+| Mukesh | 200                |
+| shyam  | 400                |
++--------+--------------------+
+5 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select e.id,e.name,o.email from sunmax_company e join details o on e.id=o.id 
+    -> ;
++----+--------+------------------+
+| id | name   | email            |
++----+--------+------------------+
+|  1 | shyam  | shyam@gmail.com  |
+|  2 | Aman   | aman@gmail.com   |
+|  3 | Mukesh | mukesh@gmail.com |
+|  5 | Anuj   | ram@gmail.com    |
+|  6 | Anil   | ajay@gmail.com   |
++----+--------+------------------+
+5 rows in set (0.057 sec)
+
+MariaDB [firstdatabase]> select e.id ,e.name,o.email from sunmax_company e left join details o on e.id=o.id;
++----+--------+------------------+
+| id | name   | email            |
++----+--------+------------------+
+|  1 | shyam  | shyam@gmail.com  |
+|  2 | Aman   | aman@gmail.com   |
+|  3 | Mukesh | mukesh@gmail.com |
+|  5 | Anuj   | ram@gmail.com    |
+|  6 | Anil   | ajay@gmail.com   |
++----+--------+------------------+
+5 rows in set (0.068 sec)
+
+MariaDB [firstdatabase]> select e.id ,e.name,o.email from sunmax_company e right join details o on e.id=o.id;
++------+--------+------------------+
+| id   | name   | email            |
++------+--------+------------------+
+|    1 | shyam  | shyam@gmail.com  |
+|    2 | Aman   | aman@gmail.com   |
+|    3 | Mukesh | mukesh@gmail.com |
+| NULL | NULL   | ishan@gmail.com  |
+|    5 | Anuj   | ram@gmail.com    |
+|    6 | Anil   | ajay@gmail.com   |
++------+--------+------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select e.id ,e.name,e.commission,o.email from sunmax_company e left join details o on e.id=o.id union all select e.id,e.name,e.commission,o.email from sunmax_company e right join details o on e.id=o.id;
++------+--------+------------+------------------+
+| id   | name   | commission | email            |
++------+--------+------------+------------------+
+|    1 | shyam  | 400        | shyam@gmail.com  |
+|    2 | Aman   | 100        | aman@gmail.com   |
+|    3 | Mukesh | 200        | mukesh@gmail.com |
+|    5 | Anuj   | 250        | ram@gmail.com    |
+|    6 | Anil   | 160        | ajay@gmail.com   |
+|    1 | shyam  | 400        | shyam@gmail.com  |
+|    2 | Aman   | 100        | aman@gmail.com   |
+|    3 | Mukesh | 200        | mukesh@gmail.com |
+| NULL | NULL   | NULL       | ishan@gmail.com  |
+|    5 | Anuj   | 250        | ram@gmail.com    |
+|    6 | Anil   | 160        | ajay@gmail.com   |
++------+--------+------------+------------------+
+11 rows in set (0.050 sec)
+
+
+MariaDB [firstdatabase]> select s.name,s1.name from supervisor s left join supervisor s1 on s.supid=s1.id union all select s.name,s1.name from supervisor s left join supervisor s1 on s.supid=s1.id;
++--------+--------+
+| name   | name   |
++--------+--------+
+| aman   | arun   |
+| amit   | arun   |
+| arun   | ashish |
+| ashish | NULL   |
+| aman   | arun   |
+| amit   | arun   |
+| arun   | ashish |
+| ashish | NULL   |
++--------+--------+
+8 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select s.name,s1.name from supervisor s left join supervisor s1 on s.supid=s1.id;
++--------+--------+
+| name   | name   |
++--------+--------+
+| aman   | arun   |
+| amit   | arun   |
+| arun   | ashish |
+| ashish | NULL   |
++--------+--------+
+4 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> 
+
+MariaDB [firstdatabase]> Delimiter $$
+MariaDB [firstdatabase]> CREATE PROCEDURE Getcompany()
+    -> BEGIN
+    -> SELECT * FROM sunmax_company;
+    -> END$$
+Query OK, 0 rows affected (0.403 sec)
+
+MariaDB [firstdatabase]> ;
+    -> $$
+ERROR 1065 (42000): Query was empty
+MariaDB [firstdatabase]> DELIMITER ;
+MariaDB [firstdatabase]> CALL company();
+ERROR 1305 (42000): PROCEDURE firstdatabase.company does not exist
+MariaDB [firstdatabase]> call GETcompany();
++----+--------+--------+------+---------------+------------+------+-----------------+
+| id | name   | salary | Exps | Dept          | commission | DOJ  | Desig           |
++----+--------+--------+------+---------------+------------+------+-----------------+
+|  1 | shyam  |  15000 | 5yrs | HR            | 400        | 2003 | Trainee         |
+|  2 | Aman   |  30000 | 3    | Quality       | 100        | 2000 | Junior Engineer |
+|  3 | Mukesh |  50000 | 5yrs | Customer Care | 200        | 2005 | Engineer        |
+|  5 | Anuj   |  50000 | 3yrs | maintenance   | 250        | 2006 | GET             |
+|  6 | Anil   |  60000 | 3yrs | Quality       | 160        | 2020 | Engineer        |
++----+--------+--------+------+---------------+------------+------+-----------------+
+5 rows in set (0.088 sec)
+
+Query OK, 0 rows affected (0.088 sec)
+
+MariaDB [firstdatabase]> DELIMITER //
+MariaDB [firstdatabase]> SELECT AVG(commission) from sunmax_company;
+    -> CREATE PROCEDURE Sstore
+    -> BEGIN
+    -> SELECT SUM(commission) from sunmax_company;
+    -> END //
++-----------------+
+| AVG(commission) |
++-----------------+
+|             222 |
++-----------------+
+1 row in set (0.001 sec)
+
+
