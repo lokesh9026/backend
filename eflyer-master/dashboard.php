@@ -11,17 +11,19 @@
 
 
      <div class="container">
-         <h5>Logout</h5>
-         
-   
+       <br>
+     <h5 style="text-align:center;">Product List</h5>
+    
 <form method="post">
+<br>     
+   <br>
      <table class="table">
         <thead>
           <tr>
             <th scope="col">id</th>
             <th scope="col">Categories</th>
             <th scope="col">Links</th>
-            <th scope="col"></th>
+            
           </tr>
         </thead>
         <tbody>
@@ -29,13 +31,13 @@
             <th scope="row">1</th>
             <td>fashion</td>
             <td><input type="submit" value="details" name="fdel"> </td>
-            <td></td>
+            
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>jewellery</td>
             <td><input type="submit" value="details" name="jdel" ></td>
-            <td></td>
+           
           </tr>
           <tr>
             <th scope="row">3</th>
@@ -51,6 +53,11 @@
   
 
     <?php 
+    session_start();
+    $a=$_SESSION['sub'];
+
+    
+    echo $a;
 if (isset($_POST['jdel'])){
   header('Location:jdel.php');
 }

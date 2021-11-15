@@ -1,6 +1,6 @@
 <?php 
 include "con.php";
-$query1=mysqli_query($con,"select name,price,img_url from fashion") or die("error in query");                      
+$query1=mysqli_query($con,"select prod_id,name,price,img_url from fashion") or die("error in query");                      
 
 ?>
 <!DOCTYPE html>
@@ -90,7 +90,7 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">All Category 
                      </button>
                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Fashion</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <a class="dropdown-item" href="#">Something else here</a>
                      </div>
@@ -124,9 +124,9 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                               <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                               <span class="padding_10">Cart</span></a>
                            </li>
-                           <li><a href="#">
+                           <li><a href="signin.php">
                               <i class="fa fa-user" aria-hidden="true"></i>
-                              <span class="padding_10">Cart</span></a>
+                              <span class="padding_10">Login</span></a>
                            </li>
                         </ul>
                      </div>
@@ -192,20 +192,25 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                         <div class="row">
 
                            <?php 
+                           session_start();
                            while($row2=mysqli_fetch_array($query1)){
                                     $name=$row2['name'];
                                     $price=$row2['price'];
                                     $img=$row2['img_url'];
-                                    // echo $name;
-                                
+                                    //  echo $name;
+                                    $sid=$row2['prod_id'];
+                                    // echo $sid;
+
+                                $_SESSION['sid']=$prod_id;
+                                  
                                  ?>
                            <div class="col-lg-4 col-sm-4">
                            <a ><div class="box_main" href="final.php" ></a>
                                  <h4 class="shirt_text"><?php echo $name;?></h4>
-                                 <p class="price_text">Price  <span style="color: #262626;">$ <?php echo $price;?></span></p>
+                                 <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
                                  <div class="tshirt_img"><img src="<?php echo $img;?>" ></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="buy.php">Buy Now</a></div>
+                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="subcat.php">See More</a></div>
                                  </div>
                               </div>
@@ -252,7 +257,7 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                                  <div class="tshirt_img"><img src="images/tshirt-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="subcat.php">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
@@ -263,7 +268,7 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                                  <div class="tshirt_img"><img src="images/dress-shirt-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="subcat.php">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
@@ -274,7 +279,7 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                                  <div class="tshirt_img"><img src="images/women-clothes-img.png"></div>
                                  <div class="btn_main">
                                     <div class="buy_bt"><a href="#">Buy Now</a></div>
-                                    <div class="seemore_bt"><a href="subcat.php">See More</a></div>
+                                    <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
@@ -347,28 +352,34 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                      <h1 class="fashion_taital">Electronic</h1>
                      <div class="fashion_section_2">
                         <div class="row">
-                        <?php 
-                           while($row2=mysqli_fetch_array($query1)){
-                                    $name=$row2['name'];
-                                    $price=$row2['price'];
-                                    $img=$row2['img_url'];
-                                    // echo $name;
+
+
+                         <?php 
+                            include "con.php";
+                            $query3=mysqli_query($con,"select prod_id,name,price,img_url from electronic") or die("error in query");                      
+                               
+
+                           while($row3=mysqli_fetch_array($query3)){
+                                    $name1=$row3['name'];
+                                    $price1=$row3['price'];
+                                    $img1=$row3['img_url'];
+                                    //  echo $name;
                                 
                                  ?>                       
-                           <div class="col-lg-4 col-sm-4">
-                              <div class="box_main">
-                                 <h4 class="shirt_text">Laptop</h4>
-                                 <p class="price_text">Start Price  <span style="color: #262626;">$ 100</span></p>
-                                 <div class="electronic_img"><img src="images/laptop-img.png"></div>
+                            <div class="col-lg-4 col-sm-4">
+                           <a ><div class="box_main" href="final.php" ></a>
+                                 <h4 class="shirt_text"><?php echo $name1;?></h4>
+                                 <p class="price_text">Price  <span style="color: #262626;">$ <?php echo $price1;?></span></p>
+                                 <div class="tshirt_img"><img src="<?php echo $img1;?>" ></div>
                                  <div class="btn_main">
-                                    <div class="buy_bt"><a href="#">Buy Now</a></div>
+                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="#">See More</a></div>
                                  </div>
                               </div>
                            </div>
-
                            <?php }?>
-
+                       
+<!-- 
                            <div class="col-lg-4 col-sm-4">
                               <div class="box_main">
                                  <h4 class="shirt_text">Mobile</h4>
@@ -391,10 +402,12 @@ $query1=mysqli_query($con,"select name,price,img_url from fashion") or die("erro
                                  </div>
                               </div>
                            </div>
+-->
+                           
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> 
 
                <div class="carousel-item">
                   <div class="container">

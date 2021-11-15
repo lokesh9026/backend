@@ -26,8 +26,7 @@ document.getElementById("p2").style.fontSize = "larger";
       <th scope="col">image</th>
       <th scope="col">name</th>
       <th scope="col">price</th>
-      <th scope="col">edit</th>
-      <th scope="col">delete</th>
+      <th scope="col">Add to my cart</th>
     </tr>
     </thead>
   
@@ -35,15 +34,21 @@ document.getElementById("p2").style.fontSize = "larger";
 
      <?php 
      include "con.php";
-    //  $a=$_GET['fashion'];
-    //  echo $a;
-     $sql="select * from fashion";
-               
-        // echo $sql;
-        $query2=mysqli_query($con,$sql) or die("error in query");
+    //  session_start();
+     
+    
+    $sql= "select * from fashion ";
+    echo $sql;
+    $query2=mysqli_query($con,$sql) or die("error in query");
 
-       
-        $sid=$row2['id'];
+    $sub=$query2['subcat'];
+    while($row2=mysqli_fetch_array($query2)){
+   
+     $sql="SELECT * FROM `fashion` WHERE subcat='$sub'";
+
+        // echo $sql;
+    $query2=mysqli_query($con,$sql) or die("error in query");
+   
      while($row2=mysqli_fetch_array($query2)){
        $sid=$row2['prod_id'];
        $_SESSION['id']=$sid;
@@ -53,8 +58,7 @@ document.getElementById("p2").style.fontSize = "larger";
        echo "<td><img src=".$row2['img_url']." height=50px width=50px></td>";
        echo "<td>".$row2['name']."</td>";
        echo "<td>$".$row2['price']."</td>";
-       echo "<td><a href=edit.php?id=$sid>Edit</a></td>";
-       echo "<td><a href=Delete.php?id=$sid>Delete</a></td>";
+       echo "<td><a href=buy.php?id=$sid>Add to my cart</a></td>";
        echo"</tr>";
           
        echo "</tr>";

@@ -11,8 +11,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h1>Dashboard</h1>
-    <div class="container">
+    <br>
+    <h5 style="text-align:center;">Add new Product</h5>
+    <div class="container mt-5">
 
 
     <form class="row g-3" method="post" enctype="multipart/form-data">
@@ -30,23 +31,22 @@
           <input type="text" name="desc" class="form-control" id="inputPassword4">
         </div>
 
-
-
+    
         <div class="col-4">
           <label for="inputAddress" class="form-label">Image</label>
           <input type="file" class="form-control" name="file" placeholder="1234 Main St">
         </div>
-<!--   
-        <div class="col-md-4">
+ 
+        <!-- <div class="col-md-4">
           <label for="inputState" class="form-label">Category</label>
           <select id="inputState" name="cat" class="form-select">
             <option selected>Choose...</option>
-            <option>Fashion</option>
-            <option>Jewelellery</option>
-            <option>Electronic</option>
+            <option value="fashion">Fashion</option>
+            <option value="jewellery">Jewelellery</option>
+            <option value="electronic">Electronic</option>
           </select>
-        </div> -->
- 
+        </div>
+  -->
 
         <div class="col-12">
           <input type="submit" class="btn btn-primary" name ="submit" value="Update">
@@ -59,10 +59,15 @@
 
 
 include "con.php";
+
+
 if(isset($_POST['submit']))
 { 
+$cate=$_POST['cat'];
+
 $filepath = "images/".$_FILES["file"]["name"];
-$name=$_POST['name'];
+$name = mysqli_real_escape_string($con,$_POST['name']);
+// $name=$_POST['name'];
 $price=$_POST['price'];
 $desc=$_POST['desc'];
 
@@ -70,13 +75,17 @@ $desc=$_POST['desc'];
 // echo $price;
 // echo $desc;
 // echo $filepath;
-$sql="insert into electronic (name,price,img_url,description) VALUES ('$name' ,'$price' ,'$filepath','$desc')";
+// echo $cate;
+$sql="insert into product (name,price,img_url) VALUES ('$name' ,'$price' ,'$filepath')";
 $query=mysqli_query($con,$sql) or die ("Error in Query");
 
 move_uploaded_file($_FILES["file"]["tmp_name"], $filepath);
 
 if($query) 
-{       
+{    
+  
+  echo "Data Updated";
+  header('Location:dashboard.php');
 } 
 else 
 {

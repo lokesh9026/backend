@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,8 +27,7 @@ document.getElementById("p2").style.fontSize = "larger";
       <th scope="col">image</th>
       <th scope="col">name</th>
       <th scope="col">price</th>
-      <th scope="col">edit</th>
-      <th scope="col">delete</th>
+
     </tr>
     </thead>
   
@@ -35,26 +35,30 @@ document.getElementById("p2").style.fontSize = "larger";
 
      <?php 
      include "con.php";
-    //  $a=$_GET['fashion'];
-    //  echo $a;
-     $sql="select * from fashion";
-               
-        // echo $sql;
-        $query2=mysqli_query($con,$sql) or die("error in query");
+    $a=$_GET['sub'];
+    echo "hi";
 
-       
-        $sid=$row2['id'];
-     while($row2=mysqli_fetch_array($query2)){
-       $sid=$row2['prod_id'];
-       $_SESSION['id']=$sid;
+    echo $a;
+     $sql="select * from fashion where subcat= '$a'";
+     echo $sql;
+    //  $query2=mysqli_query($con,$sql) 
+
+     $query3=mysqli_query($con,$sql) or die("error in query"); 
+     echo $query;
+     while ($row2=mysqli_fetch_array($query3)){
+        // while($row2=mysqli_fetch_array($query2))
+        $buy=$row2['prod_id'];
+        echo $buy;       
+
        echo "<tr>";
         // $_SESSION['id']=row2['prod_id'];
        echo "<td>".$row2['prod_id']."</td>";
-       echo "<td><img src=".$row2['img_url']." height=50px width=50px></td>";
+    //    echo "<td><img src=".$row2['img_url']." height=50px width=50px></td>";
+
+       echo "<td> <a href='buy.php?sub=$buy'><img src=".$row2['img_url']." height=50px width=50px </a></td>";
        echo "<td>".$row2['name']."</td>";
        echo "<td>$".$row2['price']."</td>";
-       echo "<td><a href=edit.php?id=$sid>Edit</a></td>";
-       echo "<td><a href=Delete.php?id=$sid>Delete</a></td>";
+  
        echo"</tr>";
           
        echo "</tr>";

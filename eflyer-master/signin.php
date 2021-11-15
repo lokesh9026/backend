@@ -21,7 +21,7 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password">
+          <input type="password" class="form-control" name="password" >
         </div>
 
         <input type="submit" name="submit" value="Submit"></input>
@@ -31,6 +31,7 @@
     </div>
 
 <?php
+session_start();
 
 error_reporting(0);
 include "con.php";
@@ -41,7 +42,7 @@ $pass=$_POST['password'];
 
 
 
-$sql="select * from user where email='$user' and password='$pass'";
+$sql="select * from signup where email='$user' and password='$pass'";
 
 $query=mysqli_query($con,$sql) or die ("Error in the query");
 $rows=mysqli_num_rows($query);
@@ -61,14 +62,15 @@ else{
 }
 
 
+
+
+}
 if (isset($_POST['signup']))
 {
   header ('Location:signup.php');
 }
 
 mysqli_close($con);
-
-}
 
 ?>
 

@@ -11,11 +11,12 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <h5 style="text-align:center;">Update</h5>
-    <div class="container">
+    <br>
+    <h5 style="text-align:center;">Add new Product</h5>
+    <div class="container mt-5">
 
 
-    <form class="row g-3 mt-5" method="post" enctype="multipart/form-data">
+    <form class="row g-3" method="post" enctype="multipart/form-data">
         <div class="col-md-4">
           <label for="inputEmail4" class="form-label">Product Name</label>
           <input type="text" name="name" class="form-control" id="inputEmail4">
@@ -30,23 +31,36 @@
           <input type="text" name="desc" class="form-control" id="inputPassword4">
         </div>
 
-
-
+    
         <div class="col-4">
           <label for="inputAddress" class="form-label">Image</label>
           <input type="file" class="form-control" name="file" placeholder="1234 Main St">
         </div>
-<!--   
+ 
         <div class="col-md-4">
           <label for="inputState" class="form-label">Category</label>
           <select id="inputState" name="cat" class="form-select">
             <option selected>Choose...</option>
-            <option>Fashion</option>
-            <option>Jewelellery</option>
-            <option>Electronic</option>
+            <option value="fashion">Fashion</option>
+            <option value="jewellery">Jewelellery</option>
+            <option value="electronic">Electronic</option>
           </select>
-        </div> -->
+        </div>
  
+        <div class="col-md-4">
+          <label for="inputState" class="form-label">Type</label>
+          <select id="inputState" name="dog" class="form-select">
+            <option selected>Choose...</option>
+            <option value="T-shirt">T-shirt</option>
+            <option value="Shirt">Shirt</option>
+            <option value="Jeans">Jeans</option>
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Jhumka">Jhumka</option>
+            <option value="Necklace">Necklace</option>
+            
+          </select>
+        </div>
 
         <div class="col-12">
           <input type="submit" class="btn btn-primary" name ="submit" value="Update">
@@ -59,24 +73,34 @@
 
 
 include "con.php";
+
+
 if(isset($_POST['submit']))
 { 
+$cate=$_POST['cat'];
+
 $filepath = "images/".$_FILES["file"]["name"];
-$name=$_POST['name'];
+$name = mysqli_real_escape_string($con,$_POST['name']);
+// $name=$_POST['name'];
 $price=$_POST['price'];
 $desc=$_POST['desc'];
+$subcat=$_POST['dog'];
 
 // echo $name;
 // echo $price;
 // echo $desc;
 // echo $filepath;
-$sql="insert into jewellery (name,price,img_url,description) VALUES ('$name' ,'$price' ,'$filepath','$desc')";
+// echo $cate;
+$sql="insert into $cate (name,price,img_url,description,subcat) VALUES ('$name' ,'$price' ,'$filepath','$desc','$subcat')";
 $query=mysqli_query($con,$sql) or die ("Error in Query");
 
 move_uploaded_file($_FILES["file"]["tmp_name"], $filepath);
 
 if($query) 
-{       
+{    
+  
+  echo "Data Updated";
+  header('Location:dashboard.php');
 } 
 else 
 {

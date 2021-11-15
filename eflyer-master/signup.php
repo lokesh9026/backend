@@ -74,11 +74,17 @@
                 <div class="row">
 
                     <!--Grid column-->
-                    <div class="col-md-12">
+                    <div class="col-md-6">
 
                         <div class="md-form">
-                            <label for="message">Address</label>
-                            <textarea type="text" id="message" name="address" rows="2" class="form-control md-textarea"></textarea>
+                            <label for="message">Password</label>
+                            <input type="password" id="message" name="password" rows="2" class="form-control md-textarea">
+                            
+                        </div>
+
+                        <div class="md-form">
+                            <label for="message">Re-Password</label>
+                            <input type="password" id="message" name="repassword" rows="2" class="form-control md-textarea">
                             
                         </div>
 
@@ -116,9 +122,15 @@ $email = $_POST['email'];
 
 $mobile = $_POST['mobile'];
 
-$address = $_POST['address'];
+$password = $_POST['password'];
+$repassword = $_POST['repassword'];
 
-
+if ($password!=$repassword){
+    echo "
+    <script>
+        alert('Password Miss match');
+    </script>";  
+}
 
 
 // $sql="Insert into signup(name,email,mobile,address)
@@ -127,10 +139,14 @@ $address = $_POST['address'];
 
 
 
-$query=mysqli_query($con,"Insert into signup(name,email,mobile,address)
-        values('$name','$email',$mobile,'$address')") or die ("Error in Query");
+$query=mysqli_query($con,"Insert into signup(name,email,mobile,password)
+        values('$name','$email',$mobile,'$password')") or die ("Error in Query");
 
+        if ($query){
+            header ('Location:signin.php');
+        }
 }
+
 // $content="From: $name \n Email: $email \n Message: $message";
 // $recipient = "youremail@here.com";
 // $mailheader = "From: $email \r\n";
