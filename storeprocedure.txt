@@ -161,6 +161,23 @@ MariaDB [firstdatabase]> call at(@commission);
 +--------+
 5 rows in set (0.000 sec)
 
+MariaDB [firstdatabase]> delimiter //
+MariaDB [firstdatabase]> create procedure mn(out num int) begin select count(salary) into num from sunmax_company where name='Aman'; end // 
+Query OK, 0 rows affected (0.094 sec)
+
+MariaDB [firstdatabase]> delimiter ;
+MariaDB [firstdatabase]> call mn(@lok);
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [firstdatabase]> select @lok as sal
+    -> ;
++------+
+| sal  |
++------+
+|    1 |
++------+
+1 row in set (0.000 sec)
+
 
 
 
