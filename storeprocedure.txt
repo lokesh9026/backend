@@ -1,0 +1,185 @@
+﻿lokesh@lokesh-pc:~$ sudo /opt/lampp/lampp start
+[sudo] password for lokesh: 
+Starting XAMPP for Linux 8.0.11-2...
+XAMPP: Starting Apache...ok.
+XAMPP: Starting MySQL...ok.
+XAMPP: Starting ProFTPD...ok.
+lokesh@lokesh-pc:~$ /opt/lampp/bin/mysql.server: 264: kill: No such process
+
+sudo service mysql stop
+lokesh@lokesh-pc:~$ sudo service mysql stop
+lokesh@lokesh-pc:~$  sudo /opt/lampp/lampp restart
+Restarting XAMPP for Linux 8.0.11-2...
+XAMPP: Stopping Apache...ok.
+XAMPP: Stopping MySQL...not running.
+XAMPP: Stopping ProFTPD...ok.
+XAMPP: Starting Apache...ok.
+XAMPP: Starting MySQL...ok.
+XAMPP: Starting ProFTPD...ok.
+lokesh@lokesh-pc:~$ sudo /opt/lampp/bin/mysqli -u root -p
+[sudo] password for lokesh: 
+Sorry, try again.
+[sudo] password for lokesh: 
+sudo: /opt/lampp/bin/mysqli: command not found
+lokesh@lokesh-pc:~$ sudo /opt/lampp/bin/mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 10.4.21-MariaDB Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databasses;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'databasses' at line 1
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| PDO                |
+| college            |
+| db1                |
+| ecomm              |
+| firstdatabase      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| project            |
+| test               |
++--------------------+
+11 rows in set (0.001 sec)
+
+MariaDB [(none)]> use firstdatabase;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+    -> 
+    -> delimiter //
+
+lokesh@lokesh-pc:~$ sudo /opt/lampp/bin/mysql_upgrade
+[sudo] password for lokesh: 
+This installation of MariaDB is already upgraded to 10.4.21-MariaDB, use --force if you still need to run mysql_upgrade
+lokesh@lokesh-pc:~$ sudo /opt/lampp/bin/mysql -u root -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 31
+Server version: 10.4.21-MariaDB Source distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use firstdatabase
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [firstdatabase]> delimiter $$
+MariaDB [firstdatabase]> create procedure sp();
+    -> begin
+    -> select name from sunmax_company(in rat(20))
+    -> end $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ';
+begin
+select name from sunmax_company(in rat(20))
+end' at line 1
+MariaDB [firstdatabase]> delimiter $$
+MariaDB [firstdatabase]> create procedure sp(in rat varchar(20)) begin select name from sunmax_company where name=rat; end$$
+Query OK, 0 rows affected (0.075 sec)
+
+MariaDB [firstdatabase]> delimiter ;
+MariaDB [firstdatabase]> call sp()
+    -> call sp(Mukesh)
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'call sp(Mukesh)' at line 2
+MariaDB [firstdatabase]> call sp(Mukesh);
+ERROR 1054 (42S22): Unknown column 'Mukesh' in 'field list'
+MariaDB [firstdatabase]> call sp('Mukesh');
++--------+
+| name   |
++--------+
+| Mukesh |
++--------+
+1 row in set (0.001 sec)
+
+Query OK, 0 rows affected (0.001 sec)
+
+MariaDB [firstdatabase]> delimiter ##
+MariaDB [firstdatabase]> create procedure fname()
+    -> begin
+    -> ;
+    -> ;
+    -> ##
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 2
+MariaDB [firstdatabase]> delimiter $$
+MariaDB [firstdatabase]> create procedure sp(out sat varchar(20))
+    -> begin
+    -> select commission  from sunmax_company where commission=400;
+    -> end$$
+ERROR 1304 (42000): PROCEDURE sp already exists
+MariaDB [firstdatabase]> create procedure ut(out sat varchar(20)) begin select commission  from sunmax_company where commission=400; end$$
+Query OK, 0 rows affected (0.099 sec)
+
+MariaDB [firstdatabase]> delimiter;
+    -> call ut("Mukesh");
+    -> call ut(@tt)
+    -> select @tt as movies
+    -> call ut(@tt)
+    -> select @tt as movies
+    -> //
+    -> ##
+    -> $$
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'delimiter;call ut("Mukesh");
+call ut(@tt)
+select @tt as movies
+call ut(@tt)
+s...' at line 1
+MariaDB [firstdatabase]> delimiter ;
+MariaDB [firstdatabase]> delimiter //
+MariaDB [firstdatabase]> create procedure at(out lok varchar(20))
+    -> begin
+    -> select name from sunmax_company;
+    -> end //
+Query OK, 0 rows affected (0.149 sec)
+
+MariaDB [firstdatabase]> delimiter ;
+MariaDB [firstdatabase]> call at(@commission)
+    -> select @commission as commissions
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'select @commission as commissions' at line 2
+MariaDB [firstdatabase]> call at(@commission);
++--------+
+| name   |
++--------+
+| shyam  |
+| Aman   |
+| Mukesh |
+| Anuj   |
+| Anil   |
++--------+
+5 rows in set (0.000 sec)
+
+
+
+
+
+MariaDB [firstdatabase]> delimiter //
+MariaDB [firstdatabase]> create procedure put(inout total int, in nam varchar(20)) begin select count(id) into total from sunmax_company where name=nam; end//
+Query OK, 0 rows affected (0.117 sec)
+
+MariaDB [firstdatabase]> delimiter ;
+MariaDB [firstdatabase]> call put(@t,'Mukesh');
+Query OK, 1 row affected (0.001 sec)
+
+MariaDB [firstdatabase]> select @t as man
+    -> ;
++------+
+| man  |
++------+
+|    1 |
++------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> 
