@@ -212,7 +212,7 @@ $query1=mysqli_query($con,"select id,name,price,img_url ,table_name from product
                            <a ><div class="box_main" href="final.php" ></a>
                                  <h4 class="shirt_text"><?php echo $name;?></h4>
                                  <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
-                                 <div class="tshirt_img"><a href="fdel2.php?sub=<?php echo $sub; ?>"><img src="<?php echo $img;?>" ></a></div>
+                                 <div class="tshirt_img"><a href="fdel22.php?sub=<?php echo $sub; ?>"><img src="<?php echo $img;?>" ></a></div>
                                  <div class="btn_main">
                                     <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="subcat.php">See More</a></div>

@@ -114,73 +114,76 @@
 
   <p id="p2">Hello</p>
   <script>
-document.getElementById("p2").style.color = "blue";
-document.getElementById("p2").style.fontFamily = "Arial";
-document.getElementById("p2").style.fontSize = "larger";
-</script>
+        document.getElementById("p2").style.color = "blue";
+        document.getElementById("p2").style.fontFamily = "Arial";
+        document.getElementById("p2").style.fontSize = "larger";
+  </script>
     <h5 style="text-align:center;">Prodoct Details</h5>
-<div class="container">
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">image</th>
-      <th scope="col">name</th>
-      <th scope="col">price</th>
- 
-    </tr>
-    </thead>
-  
-    <tbody>
 
+
+
+    <div class="fashion_section">
+         <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <h1 class="fashion_taital">Products</h1>
+                     <div class="fashion_section_2">
+                        <div class="row">
      <?php 
-     include "con.php";
-     $a=$_GET['sub'];
-     echo $a;
-    //  $sql="select * from $a";
-    // $a='fashion';
- 
-    //  $a=$_GET['fashion'];
-    //  echo $a;
 
+                        include "con.php";
+
+                        session_start();
+
+                        $a=$_GET['sub'];
+                        // echo $a;
+                        //  $sql="select * from $a";
+                        // $a='fashion';
+
+                        //  $a=$_GET['fashion'];
+                        
+
+
+
+                        $sql="select * from $a";
+                        $query1=mysqli_query($con,$sql) or die("error in query");                      
+                        while($row2=mysqli_fetch_array($query1)){
+                                $name=$row2['name'];
+                                $price=$row2['price'];
+                                $img=$row2['img_url'];
+                                //  echo $name;
+                                $sid=$row2['id'];
+                                $sub=$row2['table_name'];
+                                // echo $sub;
+                                // echo $sid;
+                                $ss=$row2['subcat'];
+                                // echo $ss;
+
+                            $_SESSION['sid']=$sid;
+                            $_SESSION['sub']=$sub;
     
-     $sql="select * from $a";
-               
-        // echo $sql;
-        
-               
-        // echo $sql;
-        $query2=mysqli_query($con,$sql) or die("error in query");
-
        
-        
-     while($row2=mysqli_fetch_array($query2)){
-       $sid=$row2['prod_id'];
-       $ss=$row2['subcat'];
-       echo $ss;
+      ?>
+                            <div class="col-lg-4 col-sm-4">
+                            <a ><div class="box_main" href="final.php" ></a>
+                                <h4 class="shirt_text"><?php echo $name;?></h4>
+                                <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
+                                <div class="tshirt_img"><a href="new22.php?sub=<?php echo $ss; ?>"><img src="<?php echo $img;?>" ></a></div>
+                                <div class="btn_main">
+                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
+                                    <div class="seemore_bt"><a href="subcat.php">See More</a></div>
+                                </div>
+                            </div>
+                            </div>
+                            <?php }?>
 
-       $_SESSION['id']=$sid;
-       echo "<tr>";
-        // $_SESSION['id']=row2['prod_id'];
-       echo "<td>".$row2['prod_id']."</td>";
-      //  echo "<td><img src=".$row2['img_url']." height=50px width=50px></td>";
 
-       
-       echo "<td><a href='new.php?sub=$ss'><img src=".$row2['img_url']."  height=50px width=50px> </a></td>";
-       
-       
-       echo "<td>".$row2['name']."</td>";
-       echo "<td>$".$row2['price']."</td>";
 
-       echo"</tr>";
-          
-       echo "</tr>";
-     }
-     
-     
-    ?>
-</tbody>
-    
+               </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
