@@ -42,11 +42,40 @@
 
   </head>
 
-
-
-  
   <body>
 
+     <!-- banner bg main start -->
+     <div class="banner_bg_main">
+         <!-- header top section start -->
+         <div class="container">
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                        <ul>
+                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Gift Ideas</a></li>
+                           <li><a href="#">New Releases</a></li>
+                           <li><a href="#">Today's Deals</a></li>
+                           <li><a href="#">Customer Service</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header top section start -->
+         <!-- logo section start -->
+         <div class="logo_section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- logo section end -->
          <!-- header section start -->
          <div class="header_section">
             <div class="container">
@@ -107,11 +136,51 @@
                </div>
             </div>
          </div>
+         <!-- header section end -->
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriots shoping</h1>
+                              <div class="buynow_bt"><a href="#">MEN T-Shirts Section</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <!-- banner bg main end -->
+
         
-      
-
-
-
   <p id="p2">Hello</p>
   <script>
         document.getElementById("p2").style.color = "blue";
@@ -137,6 +206,8 @@
                         session_start();
                         $_SESSION['sid']=$sid;
                         $_SESSION['sub']=$sub;
+                        $type=$_GET['$typ'];
+                        // echo $type;
 
                         $a=$_GET['sub'];
                         // echo $a;
@@ -144,11 +215,12 @@
                         // $a='fashion';
 
                         //  $a=$_GET['fashion'];
-                       if ($a){
-
-
+                        // if ($a){
 
                         $sql="select * from fashion where subcat='$a'";
+
+                        // else { $sql="select * from jewellery where subcat='$a'";}
+                        
                         $query1=mysqli_query($con,$sql) or die("error in query");                      
                         
                         while($row2=mysqli_fetch_array($query1)){
@@ -156,58 +228,34 @@
                                 $price=$row2['price'];
                                 $img=$row2['img_url'];
                                 //  echo $name;
-                                $sid=$row2['id'];
+                                $sid=$row2['prod_id'];
                                 $sub=$row2['table_name'];
-                                // echo $sub;
-                                // echo $sid;
+                                
+                              //   echo $sid;
                                 $ss=$row2['subcat'];
-                                // echo $ss;
+                              //   echo $ss;
 
-  
-    
-                         }
-
-
-                        // else {
-
-                        // $sql3="select * from jewellery where subcat='$a'";
-                        // $query3=mysqli_query($con,$sql3) or die("error in query");                      
-                        // while($row3=mysqli_fetch_array($query3)){
-                        //         $name=$row3['name'];
-                        //         $price=$row3['price'];
-                        //         $img=$row3['img_url'];
-                        //         //  echo $name;
-                        //         $sid=$row3['id'];
-                        //         $sub=$ro2['table_name'];
-                        //         // echo $sub;
-                        //         // echo $sid;
-                        //         $ss=$row3['subcat'];
-                        //         // echo $ss;
-
-
-                        //  }
+                   
       ?>
                             <div class="col-lg-4 col-sm-4">
                             <a ><div class="box_main" href="final.php" ></a>
                                 <h4 class="shirt_text"><?php echo $name;?></h4>
                                 <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
-                                <div class="tshirt_img"><a href="new22.php?sub=<?php echo $ss; ?>"><img src="<?php echo $img;?>" ></a></div>
+                                <div class="tshirt_img"><a href="buy.php?id=<?php echo $sid; ?>"><img src="<?php echo $img;?>" ></a></div>
                                 <div class="btn_main">
-                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
+                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=".$sid.">Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="subcat.php">See More</a></div>
                                 </div>
                             </div>
                             </div>
                             <?php }?>
-
-
+                            
 
                </div>
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </div>
   </body>

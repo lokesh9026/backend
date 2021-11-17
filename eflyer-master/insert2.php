@@ -56,6 +56,7 @@
             <option value="Jeans">Jeans</option>
             <option value="Laptop">Laptop</option>
             <option value="Mobile">Mobile</option>
+            <option value="Computer">Computer</option>
             <option value="Jhumka">Jhumka</option>
             <option value="Necklace">Necklace</option>
             
@@ -74,7 +75,8 @@
 
 include "con.php";
 
-
+$sub=$_GET['sub'];
+echo $sub;
 if(isset($_POST['submit']))
 { 
 $cate=$_POST['cat'];
@@ -100,7 +102,8 @@ if($query)
 {    
   
   echo "Data Updated";
-  header('Location:dashboard.php');
+  header("Location:fdel2.php?sub=".$sub);
+  
 } 
 else 
 {

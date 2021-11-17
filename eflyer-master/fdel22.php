@@ -47,6 +47,40 @@
   
   <body>
 
+
+
+     <!-- banner bg main start -->
+     <div class="banner_bg_main">
+         <!-- header top section start -->
+         <div class="container">
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                        <ul>
+                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Gift Ideas</a></li>
+                           <li><a href="#">New Releases</a></li>
+                           <li><a href="#">Today's Deals</a></li>
+                           <li><a href="#">Customer Service</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header top section start -->
+         <!-- logo section start -->
+         <div class="logo_section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- logo section end -->
          <!-- header section start -->
          <div class="header_section">
             <div class="container">
@@ -107,8 +141,50 @@
                </div>
             </div>
          </div>
-        
-      
+         <!-- header section end -->
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <!-- banner bg main end -->
+
 
 
 
@@ -135,7 +211,7 @@
                         include "con.php";
 
                         session_start();
-
+                        $tye=$_SESSION['sub'];
                         $a=$_GET['sub'];
                         // echo $a;
                         //  $sql="select * from $a";
@@ -143,9 +219,7 @@
 
                         //  $a=$_GET['fashion'];
                         
-
-
-
+                       
                         $sql="select * from $a";
                         $query1=mysqli_query($con,$sql) or die("error in query");                      
                         while($row2=mysqli_fetch_array($query1)){
@@ -169,7 +243,7 @@
                             <a ><div class="box_main" href="final.php" ></a>
                                 <h4 class="shirt_text"><?php echo $name;?></h4>
                                 <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
-                                <div class="tshirt_img"><a href="new22.php?sub=<?php echo $ss; ?>"><img src="<?php echo $img;?>" ></a></div>
+                                <div class="tshirt_img"><a href="new22.php?sub=<?php echo $ss;?>&sub2=<?php echo $a?>"><img src='<?php echo $img ?>'/></a></div>
                                 <div class="btn_main">
                                     <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="subcat.php">See More</a></div>

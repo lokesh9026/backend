@@ -47,6 +47,39 @@
   
   <body>
 
+
+     <!-- banner bg main start -->
+     <div class="banner_bg_main">
+         <!-- header top section start -->
+         <div class="container">
+            <div class="header_section_top">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="custom_menu">
+                        <ul>
+                           <li><a href="#">Best Sellers</a></li>
+                           <li><a href="#">Gift Ideas</a></li>
+                           <li><a href="#">New Releases</a></li>
+                           <li><a href="#">Today's Deals</a></li>
+                           <li><a href="#">Customer Service</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- header top section start -->
+         <!-- logo section start -->
+         <div class="logo_section">
+            <div class="container">
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- logo section end -->
          <!-- header section start -->
          <div class="header_section">
             <div class="container">
@@ -107,8 +140,50 @@
                </div>
             </div>
          </div>
-        
-      
+         <!-- header section end -->
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <div class="container">
+               <div id="my_slider" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                     <div class="carousel-item active">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="carousel-item">
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <h1 class="banner_taital">Get Start <br>Your favriot shoping</h1>
+                              <div class="buynow_bt"><a href="#">Buy Now</a></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#my_slider" role="button" data-slide="prev">
+                  <i class="fa fa-angle-left"></i>
+                  </a>
+                  <a class="carousel-control-next" href="#my_slider" role="button" data-slide="next">
+                  <i class="fa fa-angle-right"></i>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <!-- banner section end -->
+      </div>
+      <!-- banner bg main end -->
+
 
 
 
@@ -127,7 +202,9 @@ document.getElementById("p2").style.fontSize = "larger";
       <th scope="col">image</th>
       <th scope="col">name</th>
       <th scope="col">price</th>
- 
+      <th scope="col">edit</th>
+      <th scope="col">delete</th>
+      <th scope="col">hide</th>
     </tr>
     </thead>
   
@@ -157,7 +234,15 @@ document.getElementById("p2").style.fontSize = "larger";
      while($row2=mysqli_fetch_array($query2)){
        $sid=$row2['prod_id'];
        $ss=$row2['subcat'];
+       $h=$row2['hide'];
+       echo $h;
        echo $ss;
+       if ($h==1){
+          $btn="show";
+       }
+       else {
+          $btn="hide";
+       }
 
        $_SESSION['id']=$sid;
        echo "<tr>";
@@ -166,12 +251,19 @@ document.getElementById("p2").style.fontSize = "larger";
       //  echo "<td><img src=".$row2['img_url']." height=50px width=50px></td>";
 
        
-       echo "<td><a href='new.php?sub=$ss'><img src=".$row2['img_url']."  height=50px width=50px> </a></td>";
+       echo "<td><a href='new23.php?uid=".$ss."&sub=".$a."'><img src=".$row2['img_url']."  height=50px width=50px> </a></td>";
        
        
        echo "<td>".$row2['name']."</td>";
        echo "<td>$".$row2['price']."</td>";
-
+       
+       
+      
+      echo "<td><a href='insert2.php?sub=".$a."&pid=".$sid."&uid=".$ss."'>add</a></td>";
+      echo "<td><a href=edit3.php?id=$sid>Delete</a></td>";
+      echo "<td><a href=hide.php?id=".$sid."&sub=".$a."> ".$btn."</a></td>";
+   
+      
        echo"</tr>";
           
        echo "</tr>";
@@ -182,8 +274,11 @@ document.getElementById("p2").style.fontSize = "larger";
 </tbody>
     
 
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     </div>
+
+    
   </body>
 </html>

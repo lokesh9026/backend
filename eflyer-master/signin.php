@@ -32,6 +32,7 @@
 
 <?php
 session_start();
+$user=$_SESSION['email'];
 
 error_reporting(0);
 include "con.php";
@@ -55,7 +56,7 @@ if($rows>0)
     $_SESSION['email']=$user;
    
     echo $row['email'];
-    header ('Location:dashboard.php');
+    header ('Location:dashboard2.php');
 }
 else{
     echo "incorrect credential";
