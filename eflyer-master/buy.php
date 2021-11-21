@@ -188,6 +188,7 @@
         $id=$row3['prod_id'];
         $name=$row3['name'];
         $price=$row3['price'];
+        $des=$row3['description'];
         $img=$row3['img_url'];
         // $desc=$row3['description'];
         // echo $price;
@@ -206,14 +207,11 @@
 
       <div class="new col">
      
-        <h5><?php echo $name?></h5>
+        <h4><?php echo $name?></h4>
         
         <p>Available offers</p>
 
-        <p>Special PriceGet extra 30% off (price inclusive of discount)T&C</p>
-
-      
-        <p>Bank Offer15% Instant discount on first Pay Later order of ₹500 and aboveT&C</p>
+        <p>Description:<?php echo $des?></p>
 
         <h5>Colours Available</h5>
         <button type="button" class="btn btn-primary">Blue</button>

@@ -181,7 +181,7 @@
       <!-- banner bg main end -->
 
         
-  <p id="p2">Hello</p>
+  <!-- <p id="p2">Hello</p> -->
   <script>
         document.getElementById("p2").style.color = "blue";
         document.getElementById("p2").style.fontFamily = "Arial";
@@ -210,14 +210,16 @@
                         // echo $type;
 
                         $a=$_GET['sub'];
-                        // echo $a;
+                        $b=$_GET['sub2'];
+
+                       
                         //  $sql="select * from $a";
                         // $a='fashion';
 
                         //  $a=$_GET['fashion'];
                         // if ($a){
 
-                        $sql="select * from fashion where subcat='$a'";
+                        $sql="select * from $b where subcat='$a'";
 
                         // else { $sql="select * from jewellery where subcat='$a'";}
                         
@@ -231,19 +233,23 @@
                                 $sid=$row2['prod_id'];
                                 $sub=$row2['table_name'];
                                 
-                              //   echo $sid;
+                              //   echo $sub;
                                 $ss=$row2['subcat'];
                               //   echo $ss;
 
-                   
+                                 echo $b;
       ?>
                             <div class="col-lg-4 col-sm-4">
                             <a ><div class="box_main" href="final.php" ></a>
                                 <h4 class="shirt_text"><?php echo $name;?></h4>
-                                <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
-                                <div class="tshirt_img"><a href="buy.php?id=<?php echo $sid; ?>"><img src="<?php echo $img;?>" ></a></div>
+                                <p class="price_text">Price  <span style="color: #262626;"> <?php echo "RS. ".$price;?></span></p>
+                               
+                                
+                                <div class="tshirt_img"><a href="buy.php?id=<?php echo $sid; ?>&sub=<?php echo $b;?>"><img src=<?php echo $img;?>></a></div>
                                 <div class="btn_main">
-                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=".$sid.">Buy</a></div>" ?>
+                                    <!--echo "<div class='buy_bt'><a href=buy.php?id=".$sid.">Buy</a></div>" -->
+
+                                    <?php echo "<div class='buy_bt'><a href=buy.php?id=".$sid."sub=".$b.">Buy</a></div>" ?>
                                     <div class="seemore_bt"><a href="subcat.php">See More</a></div>
                                 </div>
                             </div>

@@ -242,7 +242,7 @@
                             <div class="col-lg-4 col-sm-4">
                             <a ><div class="box_main" href="final.php" ></a>
                                 <h4 class="shirt_text"><?php echo $name;?></h4>
-                                <p class="price_text">Price  <span style="color: #262626;"> <?php echo "$".$price;?></span></p>
+                                <p class="price_text">Price  <span style="color: #262626;"> <?php echo "Rs. ".$price;?></span></p>
                                 <div class="tshirt_img"><a href="new22.php?sub=<?php echo $ss;?>&sub2=<?php echo $a?>"><img src='<?php echo $img ?>'/></a></div>
                                 <div class="btn_main">
                                     <?php echo "<div class='buy_bt'><a href=buy.php?id=$sid>Buy</a></div>" ?>
