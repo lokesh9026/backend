@@ -1,0 +1,252 @@
+MariaDB [firstdatabase]> select ascii ('phoneixnap');
++----------------------+
+| ascii ('phoneixnap') |
++----------------------+
+|                  112 |
++----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select bin(25);
++---------+
+| bin(25) |
++---------+
+| 11001   |
++---------+
+1 row in set (0.052 sec)
+
+MariaDB [firstdatabase]> select bit_length('example');
++-----------------------+
+| bit_length('example') |
++-----------------------+
+|                    56 |
++-----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select char (112,104,112,201,523);
++----------------------------+
+| char (112,104,112,201,523) |
++----------------------------+
+| php�
+                            |
++----------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select char-length('phoenixnap');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '-length('phoenixnap')' at line 1
+MariaDB [firstdatabase]> select char_length('phoenixnap');
++---------------------------+
+| char_length('phoenixnap') |
++---------------------------+
+|                        10 |
++---------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select concat ('phoenix','NAP');
++--------------------------+
+| concat ('phoenix','NAP') |
++--------------------------+
+| phoenixNAP               |
++--------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT CONTAT_WS(" ",'testing','concat');
+ERROR 1305 (42000): FUNCTION firstdatabase.CONTAT_WS does not exist
+MariaDB [firstdatabase]> SELECT COCTAT_WS(" ",'testing','concat');
+ERROR 1305 (42000): FUNCTION firstdatabase.COCTAT_WS does not exist
+MariaDB [firstdatabase]> SELECT CONCAT_WS(" ",'testing','concat');
++-----------------------------------+
+| CONCAT_WS(" ",'testing','concat') |
++-----------------------------------+
+| testing concat                    |
++-----------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT ELT(3,"phoenix","nap","phoenixNAP");
++-------------------------------------+
+| ELT(3,"phoenix","nap","phoenixNAP") |
++-------------------------------------+
+| phoenixNAP                          |
++-------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select export_set(5,'yes','no',5);
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| export_set(5,'yes','no',5)                                                                                                                                                                        |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| yes5no5yes5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no5no |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select export_set(5,'yes','no','-',5);
++--------------------------------+
+| export_set(5,'yes','no','-',5) |
++--------------------------------+
+| yes-no-yes-no-no               |
++--------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select field("f","b","c","d","e", "f","g");
++-------------------------------------+
+| field("f","b","c","d","e", "f","g") |
++-------------------------------------+
+|                                   5 |
++-------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select find_in-set("c","a,b,c");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'set("c","a,b,c")' at line 1
+MariaDB [firstdatabase]> select find_in_set("c","a,b,c");
++--------------------------+
+| find_in_set("c","a,b,c") |
++--------------------------+
+|                        3 |
++--------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select format (20356,3,'de_DE');
++--------------------------+
+| format (20356,3,'de_DE') |
++--------------------------+
+| 20.356,000               |
++--------------------------+
+1 row in set (0.078 sec)
+
+MariaDB [firstdatabase]> SELECT TO_BASEE64('HELLO');
+ERROR 1305 (42000): FUNCTION firstdatabase.TO_BASEE64 does not exist
+MariaDB [firstdatabase]> SELECT TO_BASE64('HELLO');
++--------------------+
+| TO_BASE64('HELLO') |
++--------------------+
+| SEVMTE8=           |
++--------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT TO_BASE64('aGVsbG8=');
++-----------------------+
+| TO_BASE64('aGVsbG8=') |
++-----------------------+
+| YUdWc2JHOD0=          |
++-----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT HEX('phoenixnap');
++----------------------+
+| HEX('phoenixnap')    |
++----------------------+
+| 70686F656E69786E6170 |
++----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select insert ('whatever',5,0,"so");
++------------------------------+
+| insert ('whatever',5,0,"so") |
++------------------------------+
+| whatsoever                   |
++------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select instr('phoenixnap',"nap");
++---------------------------+
+| instr('phoenixnap',"nap") |
++---------------------------+
+|                         8 |
++---------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select left('phoenixnap',7);
++----------------------+
+| left('phoenixnap',7) |
++----------------------+
+| phoenix              |
++----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select length('phoenixnap');
++----------------------+
+| length('phoenixnap') |
++----------------------+
+|                   10 |
++----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select CustomerName,City,Country from customer_list where CustomerName LILE 'A%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LILE 'A%'' at line 1
+MariaDB [firstdatabase]> select Name,salay from sunmax_company where name  LILE 'A%';
+MariaDB [firstdatabase]> 
+MariaDB [firstdatabase]> t name,salay from sunmax_company where name  LILE '
+MariaDB [firstdatabase]>  name,salay from sunmax_company where name  LI
+MariaDB [firstdatabase]> 
+MariaDB [firstdatabase]> 
+MariaDB [firstdatabase]> select name from sunmax_company where name  LILE 'A%';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'LILE 'A%'' at line 1
+MariaDB [firstdatabase]> select name from sunmax_company where name  LIKE 'A%';
++------+
+| name |
++------+
+| Aman |
+| Anuj |
+| Anil |
+| ajay |
++------+
+4 rows in set (0.079 sec)
+
+MariaDB [firstdatabase]> select locate('nap','phoenixNAP');
++----------------------------+
+| locate('nap','phoenixNAP') |
++----------------------------+
+|                          8 |
++----------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT LOWER('PHOENIXNAP');
++---------------------+
+| LOWER('PHOENIXNAP') |
++---------------------+
+| phoenixnap          |
++---------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT LPAD('NAP',10,'phoenix');
++--------------------------+
+| LPAD('NAP',10,'phoenix') |
++--------------------------+
+| phoenixNAP               |
++--------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select ltrim('            phoenixNAP');
++---------------------------------+
+| ltrim('            phoenixNAP') |
++---------------------------------+
+| phoenixNAP                      |
++---------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT MAKE_SET(1|2,'phoenix','NAP','example');
++-----------------------------------------+
+| MAKE_SET(1|2,'phoenix','NAP','example') |
++-----------------------------------------+
+| phoenix,NAP                             |
++-----------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> select name,salary from sunmax_company where name not like 'A%';
++--------+--------+
+| name   | salary |
++--------+--------+
+| shyam  |  15000 |
+| Mukesh |  50000 |
+| ishan  |      0 |
++--------+--------+
+3 rows in set (0.001 sec)
+
+MariaDB [firstdatabase]> select name from sunmax_company where name not regexp '^a';
++--------+
+| name   |
++--------+
+| shyam  |
+| Mukesh |
+| ishan  |
++--------+
+3 rows in set (0.123 sec)
+

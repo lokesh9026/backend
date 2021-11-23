@@ -1,0 +1,211 @@
+MariaDB [firstdatabase]> SELECT ABS(-243.5);
++-------------+
+| ABS(-243.5) |
++-------------+
+|       243.5 |
++-------------+
+1 row in set (0.061 sec)
+
+MariaDB [firstdatabase]> SELECT ABS(-10);
++----------+
+| ABS(-10) |
++----------+
+|       10 |
++----------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT ACOS(0.25);
++-------------------+
+| ACOS(0.25)        |
++-------------------+
+| 1.318116071652818 |
++-------------------+
+1 row in set (0.002 sec)
+
+MariaDB [firstdatabase]> SELECT ASIN(0.25);
++---------------------+
+| ASIN(0.25)          |
++---------------------+
+| 0.25268025514207865 |
++---------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]>  SELECT ATAN(2.5);
++--------------------+
+| ATAN(2.5)          |
++--------------------+
+| 1.1902899496825317 |
++--------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT CEIL(25.75);
++-------------+
+| CEIL(25.75) |
++-------------+
+|          26 |
++-------------+
+1 row in set (0.023 sec)
+
+MariaDB [firstdatabase]> SELECT COS(30);
++---------------------+
+| COS(30)             |
++---------------------+
+| 0.15425144988758405 |
++---------------------+
+1 row in set (0.004 sec)
+
+MariaDB [firstdatabase]> SELECT DEGREES(1.5);
++-------------------+
+| DEGREES(1.5)      |
++-------------------+
+| 85.94366926962348 |
++-------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT 10 DIV 5;
++----------+
+| 10 DIV 5 |
++----------+
+|        2 |
++----------+
+1 row in set (0.121 sec)
+
+MariaDB [firstdatabase]> SELECT FLOOR(25.75);
++--------------+
+| FLOOR(25.75) |
++--------------+
+|           25 |
++--------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT GREATEST(30, 2, 36, 81, 125);
++------------------------------+
+| GREATEST(30, 2, 36, 81, 125) |
++------------------------------+
+|                          125 |
++------------------------------+
+1 row in set (0.004 sec)
+
+MariaDB [firstdatabase]> SELECT LEAST(30, 2, 36, 81, 125);
++---------------------------+
+| LEAST(30, 2, 36, 81, 125) |
++---------------------------+
+|                         2 |
++---------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT LOG(2);
++--------------------+
+| LOG(2)             |
++--------------------+
+| 0.6931471805599453 |
++--------------------+
+1 row in set (0.001 sec)
+
+MariaDB [firstdatabase]> SELECT LOG2(6);
++-------------------+
+| LOG2(6)           |
++-------------------+
+| 2.584962500721156 |
++-------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT MOD(18, 4);
++------------+
+| MOD(18, 4) |
++------------+
+|          2 |
++------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT PI();
++----------+
+| PI()     |
++----------+
+| 3.141593 |
++----------+
+1 row in set (0.056 sec)
+
+MariaDB [firstdatabase]> SELECT POW(4, 2);
++-----------+
+| POW(4, 2) |
++-----------+
+|        16 |
++-----------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT RADIANS(180);
++-------------------+
+| RADIANS(180)      |
++-------------------+
+| 3.141592653589793 |
++-------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT RAND();
++---------------------+
+| RAND()              |
++---------------------+
+| 0.15945029646107023 |
++---------------------+
+1 row in set (0.069 sec)
+
+MariaDB [firstdatabase]> SELECT ROUND(5.553);
++--------------+
+| ROUND(5.553) |
++--------------+
+|            6 |
++--------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT SIGN(255.5);
++-------------+
+| SIGN(255.5) |
++-------------+
+|           1 |
++-------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT SIN(2);
++--------------------+
+| SIN(2)             |
++--------------------+
+| 0.9092974268256817 |
++--------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT SQRT(25);
++----------+
+| SQRT(25) |
++----------+
+|        5 |
++----------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT TAN(1.75);
++-------------------+
+| TAN(1.75)         |
++-------------------+
+| -5.52037992250933 |
++-------------------+
+1 row in set (0.022 sec)
+
+MariaDB [firstdatabase]> SELECT ATAN2(7);
++--------------------+
+| ATAN2(7)           |
++--------------------+
+| 1.4288992721907328 |
++--------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> SELECT TRUNCATE(7.53635, 2);
++----------------------+
+| TRUNCATE(7.53635, 2) |
++----------------------+
+|                 7.53 |
++----------------------+
+1 row in set (0.000 sec)
+
+MariaDB [firstdatabase]> 
+
+
