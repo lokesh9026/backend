@@ -1,12 +1,9 @@
 s="apple"
-def count(s,c):
-    res=0
-    for i in range(len(s)):
-        if (s[i]==c):
-            res =res+1
+dic={}
 
-    return res
-c="a"
-print(count(s,c))
+for i in s:
+    count=s.count(i)
+    dic[i]=count
+print(dic)
 
 

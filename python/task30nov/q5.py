@@ -10,7 +10,7 @@ def check(lst1,lst2):
             result.append(i)
     return result
 
-lst1=[10,20,30,50]
+lst1=[9,20,30,50]
 lst2=[80,90,60,70]
 
 print("final",check(lst1,lst2))

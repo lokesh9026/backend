@@ -6,4 +6,5 @@ def new(s1,s2):
 
     x=x+s2
     x=x+s1[mi:]
-print(x)
+    print(x)
+new("Ault","Kelly")
