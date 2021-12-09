@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+<h3 class='text-white my-5'>Dashboard </h3>
+<div class="jumbotron jumbotron-fluid jumbo-color">
+<div class="container">
+    {%block content%}
+    <!-- <h2 class="display-4 font-weight-bold">i  am login</h2>
+    <p class="lead">hello how are you</p>
+    {{form.as_p}} -->
+
+    <form action="" method="post" novalidate>
+        {%csrf_token%}
+        {% for fm in form%}
+         <div class="form-group">
+             {{fm.label_tag}} {{fm}}<small class="text-danger">{{fm.errors|striptags}}</small>
+            </div>
+         </div>
+         {%endfor%}
+         <input type="submit" value="Submit" class="btn btn-primary">
+         {%if form.non_field_errors%}
+        {%for error in form.non_field_errors%}}
+        <p class="alert-danger my-3">{{error}}</p>
+        {%endfor%}
+        {%endif%}
+    </form>
+    {%endblock content%}
+</div>
+</div>
+

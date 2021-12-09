@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+<h3 class='text-white my-5'>Home page </h3>
+<div class="jumbotron jumbotron-fluid jumbo-color">
+<div class="container">
+    {%block content%}
+
+    <h2 class="display-4 font-weight-bold">i  am home</h2>
+    <p class="lead">hello how are you</p>
+
+    {%for post in post%}
+     <h3>{{post.course}}</h3>
+     <p>{{post.desc}}</p>
+     
+     {%endfor%}
+    {%endblock content%}
+</div>
+</div>
