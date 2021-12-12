@@ -1,0 +1,34 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+
+{% if messages %}
+{%for message in messages%}
+    <p style="color:#060507; text-align: center; padding-top: 10px;"{% if message.tags%} class="{{message.tags}}" {%endif%} >{{message}}</p>
+{%endfor%}
+{%endif%}
+
+<div class=" container mt-lg-5" style='width:40%;'  >
+    <div class="row">
+        <div class="col">
+         <!-- <h3 class="text-center" >LOGIN FORM</h3> -->
+
+            <form action="" method="post" novalidate >
+                {%csrf_token%}
+                {% for fm in form%}
+                    <div class="form-group">
+                        {{fm.label_tag}} {{fm}} <large class="text-danger">{{fm.errors|striptags}}</large>
+                    </div>
+                {%endfor%}
+                <input type="submit" value="Submit" class="btn btn-primary">
+                {%if form.non_field_errors%}
+                    {%for error in form.non_field_errors%}
+                        <p class="alert alert-danger my-3">{{error}}</p>
+                    {%endfor%}
+                {%endif%}
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
