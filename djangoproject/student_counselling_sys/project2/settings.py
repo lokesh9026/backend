@@ -38,15 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app2',
-    'django.contrib.sites',
-
-    # auth
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    # providers
-    'allauth.socialaccount.providers.facebook',
-    'allauth.socialaccount.providers.google',
+ 
 ]
 
 MIDDLEWARE = [
@@ -129,4 +121,4 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
-sap_id=1
+# sap_id=1

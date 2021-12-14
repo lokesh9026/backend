@@ -32,5 +32,5 @@ urlpatterns = [
     path("delete/<int:id>/",views.delete_post,name='delete'),
     path("follow/<int:id>/",views.follow_post,name='follow'),
     path("update/<int:id>/",views.update_post,name='updatedata'),
-    path('accounts/',include('allauth.urls'))
+   
 ]
