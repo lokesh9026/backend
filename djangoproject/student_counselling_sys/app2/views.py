@@ -165,3 +165,16 @@ def update_post(request,id):
         return render (request,'update.html',{'form':form})
     else:
         return HttpResponseRedirect('/login/')
+
+def student(request):
+    if request.user.is_authenticated:
+     
+    #  users = User.objects.filter(groups_name='student')
+    #  
+     group=Group.objects.get(name='student')
+     print(group)
+     return render (request,'dashboard2.html',{'group':group})
+    else:
+        return HttpResponseRedirect('/login/')
+
+    
