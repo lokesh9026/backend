@@ -1,0 +1,8 @@
+https://developers.google.com/maps/documentation/javascript/overview
+
+https://openweathermap.org/api
+
+https://console.cloud.google.com/home/dashboard?project=map2-335711
+
+https://developers.google.com/identity/sign-in/web
+
