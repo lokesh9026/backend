@@ -1,0 +1,1047 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Corefit | Welcome to CoreFit Video On Demand</title>
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/main.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/bootstrap-datepicker.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/bootstrap.min.css'%}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/calendar.css' %}">
+    
+    <!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/responsive.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'm3dja/css/calendar.css' %}">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+   
+    <body>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered new-offer-dialog" role="document">
+                <div class="modal-content upload-img-pop new-offer-pop disable-text-field">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Date Posted</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="10/09/2021" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Average Rating</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="4.5" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Client Name</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="John" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">PT Name</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="Smith" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Session Name</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="Yoga" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Customer comments</label>
+                                <div class="form-field-input">
+                                    <textarea disabled class=" bg-white"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Status</label>
+                                <div class="form-field-input">
+                                    <input type="text" name="" placeholder="Live" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-box text-right btn-form acpt-rjt-btn">
+                                <button class="btn-red-one" data-toggle="modal" data-target="#exampleModalCenter-report">Report</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close-btn-pop" data-dismiss="modal"><img src="images/material-cancel.svg"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="exampleModalCenter-report" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered new-offer-dialog" role="document">
+                <div class="modal-content upload-img-pop new-offer-pop">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group form-field-main">
+                                <label class="label-field">Report</label>
+                                <div class="drop-down">
+                                    <select>
+                                        <option>Select…</option>
+                                        <option>Branch One</option>
+                                        <option>Branch Two</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group form-field-main">
+                                <div class="form-field-input">
+                                    <textarea placeholder="Type…"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="action-box text-center">
+                                <button class="btn-red-one">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="close-btn-pop" data-dismiss="modal"><img src="images/material-cancel.svg"></button>
+                </div>
+            </div>
+        </div>
+        <!--  -->
+        <main class="content-wrapper">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg  fixed-top menu-top">
+                    <a class="navbar-brand logo" href="#"><img src="images/Corefit-logo.svg"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+                    </button>
+                    <div class="collapse navbar-collapse mobile-flex" id="navbarCollapse">
+                        <ul class=" ml-auto rt-head">
+                            <li class="admin-name">
+                                <span>Admin</span> <a href="#">Warehouse gym</a>
+                            </li>
+                            <li class="info-icon-list">
+                                <a href="#" class="info-top-icon"><img src="images/message.svg"></a>
+                                <a href="#" class="info-top-icon"><img src="images/notifications.svg"></a>
+                            </li>
+                            <li class="info-top-icon">
+                            </li>
+                           <li class="nav-item dropdown ">
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-list-4" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbar-list-4">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link  login-profile-top" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <div class="img-login"><img src="images/Avatar.jpg"></div> <span>John Doe</span>
+                                            </a>
+                                            <div class="dropdown-menu pro-drop" aria-labelledby="navbarDropdownMenuLink">
+                                                <a class="dropdown-item" href="#">View Profile</a>
+                                                <a class="dropdown-item" href="#">Support</a>
+                                                <a class="dropdown-item" href="#">FAQs</a>
+                                                <a class="dropdown-item" href="#">Security</a>
+                                                <a class="dropdown-item" href="#">Logout</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <div id="fixed">
+                    <div class="sidenav" id="navAccordion" style=" padding-bottom: 50px;">
+                        <div class="menu-inner mb-4">
+                            <h5>DASHBOARDS</h5>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        <div class="menu-icon"><img src="images/home-icon.svg"></div> <span> Home </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-inner">
+                            <h5>CONTENT</h5>
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="profile-setup.html">
+                                        <div class="menu-icon"><img src="images/profile-setup.svg"></div> <span>Profile Setup
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item drodown-overflow">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems2" aria-controls="collapseSubItems2" aria-expanded="false">
+                                        <div class="menu-icon"> <img src="images/My-Schedule.svg"></div><span> My Schedule</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems2" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="calendar.html">
+                                                <span class="nav-link-text">Calendar</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="set-your-availability.html">
+                                                <span class="nav-link-text">Set Your Availability</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="bookings.html">
+                                        <div class="menu-icon"><img src="images/booking.svg"></div> <span>Bookings</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems3" aria-controls="collapseSubItems3" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/client-manage.svg"></div><span> Client Management</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems3" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="client-summary.html">
+                                                <span class="nav-link-text">Client Summary</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="services-purchased.html">
+                                                <span class="nav-link-text">Services Purchased</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="memberships-day-passes.html">
+                                                <span class="nav-link-text">Memberships & Day Passes</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="amenities-purchased.html">
+                                                <span class="nav-link-text">Amenities Purchased</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="employee.html">
+                                        <div class="menu-icon"> <img src="images/employe.svg"></div><span> Employees</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems4" aria-controls="collapseSubItems4" aria-expanded="false">
+                                        <div class="menu-icon"> <img src="images/Wallet.svg"></div> <span>Wallet</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems4" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">
+                                                <span class="nav-link-text">Wallet Dashboard</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="bank-and-cards.html">
+                                                <span class="nav-link-text">Banks and Cards</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="payment.html">
+                                                <span class="nav-link-text">Payments</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item third-dropdown  ">
+                                            <a class="nav-link nav-link-collapse" href="#collapseSubItems4w" data-toggle="collapse" data-target="#collapseSubItems4w" aria-controls="collapseSubItems4w" aria-expanded="false">
+                                                My Subscriptions
+                                            </a>
+                                            <ul class="nav-third-level collapse" id="collapseSubItems4w">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="available-subscription-plans.html">
+                                                        <span class="nav-link-text">Available Subscription Plans</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="my-plan.html">
+                                                        <span class="nav-link-text">My Plan</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="nav-item third-dropdown">
+                                            <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems4b" aria-controls="collapseSubItems4b" aria-expanded="false">
+                                                <span class="nav-link-text">Bolt-Ons</span>
+                                            </a>
+                                            <ul class="nav-third-level collapse" id="collapseSubItems4b">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="MyBolt-Ons.html">
+                                                        <span class="nav-link-text">My Bolt-Ons</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="List-of-Bolt-Ons.html">
+                                                        <span class="nav-link-text">List of Bolt-Ons</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems5" aria-controls="collapseSubItems5" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/request.svg"></div><span> Requests</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems5" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="invite-employee.html">
+                                                <span class="nav-link-text">Invite Employee</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="employee-requests.html">
+                                                <span class="nav-link-text">Employee Requests</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="other-requests.html">
+                                                <span class="nav-link-text">Other Requests</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems6" aria-controls="collapseSubItems6" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/class-manage.svg"></div> <span>Classes Management</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems6" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="class-schedule.html">
+                                                <span class="nav-link-text">Class Schedule</span>
+                                            </a>
+                                        </li>
+                                        
+                                         <li class="nav-item">
+                                            <a class="nav-link" href="add-class-schedule.html">
+                                                <span class="nav-link-text">Add Class Schedule</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="create-new-class.html">
+                                                <span class="nav-link-text">Create New Class</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="class-templates.html">
+                                                <span class="nav-link-text">Class Templates</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="create-class-template.html">
+                                                <span class="nav-link-text">Create Class Template</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="client-reviews.html">
+                                        <div class="menu-icon"><img src="images/client-review.svg"></div><span> Client Reviews</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="refer-a-service-provider.html">
+                                        <div class="menu-icon"><img src="images/refer.svg"></div> <span>Refer a Service Provider</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems7" aria-controls="collapseSubItems7" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/video-od.svg"></div><span> Video On Demand</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems7" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="vod-intro.html">
+                                                <span class="nav-link-text">Video on Demand Introduction</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="video-management.html">
+                                                <span class="nav-link-text">Video Management</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="subscription-list.html">
+                                                <span class="nav-link-text">Video Subscription List</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems8" aria-controls="collapseSubItems8" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/live-classes.svg"></div><span> Live Classes</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems8" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="LIVE-class-schedule.html">
+                                                <span class="nav-link-text">Live Class Schedule</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="add-live-class-schedule.html">
+                                                <span class="nav-link-text">Add Live Class Schedule</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="create-new-live-class.html">
+                                                <span class="nav-link-text">Create New Live Class</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="live-class-templates.html">
+                                                <span class="nav-link-text"> Live Class Template</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="create-new-live-class-template.html">
+                                                <span class="nav-link-text">Create Live Class Template</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems9" aria-controls="collapseSubItems9" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/reports.svg"></div> <span>Reports</span>
+                                    </a>
+                                    <!--     <ul class="nav-second-level collapse" id="collapseSubItems9" data-parent="#navAccordion">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Item 2.1</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            <span class="nav-link-text">Item 2.2</span>
+                                        </a>
+                                    </li>
+                                </ul> -->
+                                </li>
+                                <li class="nav-item upper-drop">
+                                    <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems10" aria-controls="collapseSubItems10" aria-expanded="false">
+                                        <div class="menu-icon"><img src="images/setting.svg"></div> <span>Settings</span>
+                                    </a>
+                                    <ul class="nav-second-level collapse" id="collapseSubItems10" data-parent="#navAccordion">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="Support.html">
+                                                <span class="nav-link-text">Support</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="report-a-User.html">
+                                                <span class="nav-link-text">Report a User</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="terms-of-service.html">
+                                                <span class="nav-link-text">Terms of Service</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="faq.html">
+                                                <span class="nav-link-text">FAQs</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="Security.html">
+                                                <span class="nav-link-text">Security</span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item third-dropdown">
+                                            <a class="nav-link nav-link-collapse" href="#" id="hasSubItems" data-toggle="collapse" data-target="#collapseSubItems20" aria-controls="collapseSubItems20" aria-expanded="false">
+                                                <span>My Account</span>
+                                            </a>
+                                            <ul class="nav-third-level collapse" id="collapseSubItems20">
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="Preferences.html">
+                                                        <span class="nav-link-text">Preferences</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="add-admin-account.html">
+                                                        <span class="nav-link-text">Add Admin Account</span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" href="admin-account-list.html">
+                                                        <span class="nav-link-text">Admin Account List</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-end"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+   ####      <form action="" method="POST">
+                    {% csrf_token %}
+                <div class="content-page">
+                    <div class="page-head-one">
+                        <h2>Add Video or Video Series</h2>
+                        <div class="btn-btm-group top-page-btn">
+                            <button class="border-btn">Discard changes</button>
+                            <button class="btn-pink ml-10 change-btn">Add Video</button>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-page">
+                        <div class="taeb-switch taeb-switch1 left text-center mb-5">
+                            <div class="taeb list_cls active" taeb-direction="left">Add Video</div>
+                            <div class="taeb calender_cls " taeb-direction="right">Video Series</div>
+                        </div>
+                        <!--add-video-tab  -->
+                        <div class="row video-one">
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Video Name</label>
+                                    <div class="form-field-input">
+                                        <input type="text" name="video_name" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Duration (in minutes)</label>
+                                    <div class="form-field-input">
+                                        <input type="text" name="duration" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Language</label>
+                                    <div class="drop-down">
+                                        <select name="lang">
+                                            <option value="one">One</option>
+                                            <option value="two">Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                        
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Applicable Subscription</label>
+                                    <div class="drop-down">
+                                        <select name="app_sub">
+                                            <option>One</option>
+                                            <option>Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Workout Type</label>
+                                    <div class="drop-down">
+                                        <select name="workout">
+                                            <option>One</option>
+                                            <option>Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Intensity</label>
+                                    <div class="drop-down">
+                                        <select name="intensity">
+                                            <option>One</option>
+                                            <option>Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                        <!-- <div class="row video-two" style="display:none">
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Video Series Name</label>
+                                    <div class="form-field-input">
+                                        <input type="text" name="seriesname" placeholder="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Language</label>
+                                    <div class="drop-down">
+                                        <select>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Applicable Subscription</label>
+                                    <div class="drop-down">
+                                        <select>
+                                            <option>One</option>
+                                            <option>Two</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row row-pd video-one">
+                        <div class="col-sm-6">
+                            <div class="content-block-one p-0">
+                                <h4 class="profile-setup-inner-block-heading">Upload Image</h4>
+                                <div class="form-group form-field-main vdo-one">
+                                    <div class="form-field-video ">
+                                        <div class="video-uploadbox">
+                                            <div class="custom-file"><input type="file" id="video" name="profileimg" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video"  class="custom-file-label placeholder text-truncate">Profile image</label>
+                                            </div>
+                                        </div>
+                                        <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field-main vdo-one">
+                                    <div class="form-field-video ">
+                                        <div class="video-uploadbox">
+                                            <div class="custom-file"><input name="titleimg" type="file" id="video" accept="" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video"  class="custom-file-label placeholder text-truncate">Tile Image</label>
+                                            </div>
+                                        </div>
+                                        <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="content-block-one p-0">
+                                <h4 class="profile-setup-inner-block-heading">Upload Video</h4>
+                                <div class="form-group form-field-main vdo-one">
+                                    <div class="form-field-video">
+                                        <div class="video-uploadbox">
+                                            <div class="custom-file"><input type="file" id="video" name="uploadvideo" accept="video/mp4,video/x-m4v,video/mov,video/avi,video/*" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video" class="custom-file-label placeholder text-truncate">Upload Video</label>
+                                            </div>
+                                        </div>
+                                        <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field-main vdo-one">
+                                    <div class="form-field-video">
+                                        <div class="video-uploadbox">
+                                            <div class="custom-file"><input type="file" id="video" accept="video/mp4,video/x-m4v,video/mov,video/avi,video/*" fullwidth="" name="videoteaser" formcontrolname="video" class="custom-file-input"><label for="video" class="custom-file-label placeholder text-truncate">Video Teaser</label>
+                                            </div>
+                                        </div>
+                                        <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                            <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>  
+                    <div class="row row-pd video-one">
+                        <div class="col-sm-6 vdo-6-one">
+                            <div class="thumb-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Skill Level</label>
+                                    <div class="drop-down drop-after">
+                                        <select class="multiple-checkboxes" multiple="multiple">
+                                            <option>Option One</option>
+                                            <option>Option Two</option>
+                                            <option>Option Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Equipment Required</label>
+                                    <div class="drop-down drop-after">
+                                        <select class="multiple-checkboxes" multiple="multiple">
+                                            <option>Option One</option>
+                                            <option>Option Two</option>
+                                            <option>Option Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Body Focus</label>
+                                    <div class="drop-down drop-after">
+                                        <select class="multiple-checkboxes" multiple="multiple">
+                                            <option>Option One</option>
+                                            <option>Option Two</option>
+                                            <option>Option Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 vdo-6-one">
+                            <div class="thumb-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">About workout or video</label>
+                                    <div class="form-field-input textarea-dif-size">
+                                        <textarea placeholder="Enter about class"></textarea>
+                                        <small>0 of 150 words</small>
+                                    </div>
+                                </div>
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">Additonal Info</label>
+                                    <div class="form-field-input textarea-dif-size">
+                                        <textarea placeholder="Enter additonal info"></textarea>
+                                        <small>0 of 150 words</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <!--video-series  -->
+                    <div class="row video-two" style="display:none">
+                        <div class="col-sm-12">
+                            <div class="content-block-one">
+                                <h4 class="profile-setup-inner-block-heading">Upload Media</h4>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-field-main p-form-3">
+                                            <div class="form-field-video ">
+                                                <div class="video-uploadbox">
+                                                    <div class="custom-file"><input type="file" id="video" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video" class="custom-file-label placeholder text-truncate">Profile image</label>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-field-main p-form-3">
+                                            <div class="form-field-video ">
+                                                <div class="video-uploadbox">
+                                                    <div class="custom-file"><input type="file" id="video" accept="video/mp4,video/x-m4v,video/mov,video/avi,video/*" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video" class="custom-file-label placeholder text-truncate">Tile Image</label>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group form-field-main p-form-3">
+                                            <div class="form-field-video ">
+                                                <div class="video-uploadbox">
+                                                    <div class="custom-file"><input type="file" id="video" accept="video/mp4,video/x-m4v,video/mov,video/avi,video/*" fullwidth="" formcontrolname="video" class="custom-file-input"><label for="video" class="custom-file-label placeholder text-truncate">Video Teaser</label>
+                                                    </div>
+                                                </div>
+                                                <div class="upload-box" data-toggle="modal" data-target="#exampleModalCenter">
+                                                    <img src="images/victor-freitas-hOuJYX2K5DA-unsplash.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row row-pd video-two" style="display:none">
+                        <div class="col-sm-12 vdo-6-one">
+                            <div class="thumb-6">
+                                <div class="form-group form-field-main">
+                                    <label class="label-field">About the video series</label>
+                                    <div class="form-field-input textarea-dif-size">
+                                        <textarea placeholder="Enter about series"></textarea>
+                                        <small>0 of 150 words</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+
+      
+        </main>
+        <!-- script -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+        <script type="text/javascript" src="js/calendar.js"></script>
+        <script type="text/javascript" src="js/calendar-pop.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.14/js/bootstrap-multiselect.min.js"></script>
+        <!-- menu -->
+        <!--    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.nav-link-collapse').on('click', function() {
+                $('.nav-link-collapse').not(this).removeClass('nav-link-show');
+                $(this).toggleClass('nav-link-show');
+            });
+        });
+        </script> -->
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".add-accord .card-header").click(function() {
+                $(".add-accord").toggleClass("add-accord-new");
+            });
+    
+            $(".card-main-accord").not(':first').click(function() {
+                $(".add-accord").removeClass("add-accord-new");
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        // Tooltips
+        $('.tip').each(function() {
+            $(this).tooltip({
+                html: true,
+                title: $('#' + $(this).data('tip')).html()
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+    
+            var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+                removeItemButton: true,
+                maxItemCount: 3,
+                searchResultLimit: 5,
+                renderChoiceLimit: 5
+            });
+    
+    
+        });
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $(".div-check").click(function() {
+    
+                if ($(this).is(":checked")) {
+                    if (this.id == "e-option1") {
+                        $("#change-div1").show();
+                        $("#change-div2").hide();
+                        $("#change-div3").hide();
+                    } else if (this.id == "e-option2") {
+                        $("#change-div2").show();
+                        $("#change-div1").hide();
+                        $("#change-div3").hide();
+                    } else if (this.id == "e-option3") {
+                        $("#change-div3").show();
+                        $("#change-div1").hide();
+                        $("#change-div2").hide();
+                    }
+                }
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(function() {
+    
+            // INITIALIZE DATEPICKER PLUGIN
+            $('.datepicker').datepicker({
+                clearBtn: false,
+                weekStart: 1,
+                orientation: "bottom",
+                format: "dd/mm/yyyy"
+            });
+            $(".datepicker").datepicker().on('show', function(e) {
+                $('.prev').html('<img src="images/left-cal-arrow.svg">');
+                $('.next').html('<img src="images/rt-cal-arrow.svg">');
+            });
+        });
+        </script>
+        <script type="text/javascript">
+        $(function() {
+            var taeb = $(".taeb-switch");
+            taeb.find(".taeb").on("click", function() {
+                var $this = $(this);
+    
+                if ($this.hasClass("active")) return;
+    
+                var direction = $this.attr("taeb-direction");
+    
+                taeb.removeClass("left right").addClass(direction);
+                taeb.find(".taeb.active").removeClass("active");
+                $this.addClass("active");
+            });
+        });
+        </script>
+        <script>
+        $(document).ready(function() {
+            $(".list_cls").click(function() {
+                $('#calender_view').hide();
+                $('#list_view').show();
+                $('#calender_view').removeClass('active');
+                $('#list_view').addClass('active');
+            });
+    
+            $(".calender_cls").click(function() {
+                $('#list_view').hide();
+                $('#calender_view').show();
+                $('#list_view').removeClass('active');
+                $('#calender_view').addClass('active');
+            });
+    
+            $(".list_cls").click(function() {
+                $('.list-btn').show();
+                $('.cal-btn').hide();
+    
+            });
+    
+            $(".calender_cls").click(function() {
+                $('.list-btn').hide();
+                $('.cal-btn').show();
+    
+            });
+    
+    
+    
+            $(".list_cls").click(function() {
+                $('.video-one').show();
+                $('.video-two').hide();
+                $('.change-btn').text('Add Video');
+    
+            });
+    
+            $(".calender_cls").click(function() {
+                $('.video-one').hide();
+                $('.video-two').show();
+                $('.change-btn').text('Continue');
+    
+    
+            });
+    
+    
+        });
+        </script>
+        <script type="text/javascript">
+        $(".ad-she-btn").click(function() {
+            $(".pop-schedule").toggle();
+        });
+        </script>
+        <script type="text/javascript" language="javascript">
+        function scrollDetect() {
+            var lastScroll = 0;
+    
+            window.onscroll = function() {
+                let currentScroll = document.documentElement.scrollTop || $('#fixed').scrollTop; // Get Current Scroll Value
+    
+                if (currentScroll > 0 && lastScroll <= currentScroll) {
+                    lastScroll = currentScroll;
+                    $('.sidenav').addClass('add-fix');
+                    $('.sidenav').removeClass('add-abs');
+                } else {
+                    lastScroll = currentScroll;
+                    $('.sidenav').removeClass('add-fix');
+                    $('.sidenav').addClass('add-abs');
+    
+                }
+            };
+        }
+    
+    
+        scrollDetect();
+        </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('.multiple-checkboxes').multiselect({
+                includeSelectAllOption: true,
+                nonSelectedText: "Select",
+            });
+        });
+        </script>
+    <script type="text/javascript">
+    
+    
+    $('select').each(function(){
+        var $this = $(this), numberOfOptions = $(this).children('option').length;
+      
+        $this.addClass('select-hidden'); 
+        $this.wrap('<div class="select"></div>');
+        $this.after('<div class="select-styled"></div>');
+    
+        var $styledSelect = $this.next('div.select-styled');
+        $styledSelect.text($this.children('option').eq(0).text());
+      
+        var $list = $('<ul />', {
+            'class': 'select-options'
+        }).insertAfter($styledSelect);
+      
+        for (var i = 0; i < numberOfOptions; i++) {
+            $('<li />', {
+                text: $this.children('option').eq(i).text(),
+                rel: $this.children('option').eq(i).val()
+            }).appendTo($list);
+            //if ($this.children('option').eq(i).is(':selected')){
+            //  $('li[rel="' + $this.children('option').eq(i).val() + '"]').addClass('is-selected')
+            //}
+        }
+      
+        var $listItems = $list.children('li');
+      
+        $styledSelect.click(function(e) {
+            e.stopPropagation();
+            $('div.select-styled.active').not(this).each(function(){
+                $(this).removeClass('active').next('ul.select-options').hide();
+            });
+            $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+      
+        $listItems.click(function(e) {
+            e.stopPropagation();
+            $styledSelect.text($(this).text()).removeClass('active');
+            $this.val($(this).attr('rel'));
+            $list.hide();
+            //console.log($this.val());
+        });
+      
+        $(document).click(function() {
+            $styledSelect.removeClass('active');
+            $list.hide();
+        });
+    
+    });
+    </script>
+    
+    </body>

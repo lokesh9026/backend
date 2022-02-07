@@ -1,0 +1,46 @@
+
+{% extends 'm3dja/base.html' %}
+
+{% block content %}
+
+<!-- Form Starting  -->
+{% load crispy_forms_tags %}
+
+<!--Login--> 
+
+<div class="container p-5">
+  <div class="d-flex justify-content-center">
+  <form method="POST" class="w-75 p-5">
+    {% csrf_token %}
+   <div class="row login bg-success p-5 mx-5 ">
+      <h5 class="text-center ">Login Here</h5>
+      {% for field in form %}
+       <label class="form-label">{{ field.label }}</label>
+          {{ field }}
+          {{ field.errors }}
+      {% endfor %}
+      {% if form.errors %}
+        <br>
+        {{ form.non_field_errors }}
+      {% endif %}
+      <a  class="text-dark" href="{% url 'password_reset' %}">Forgot Password?</a>
+
+
+      <div class="form-group mt-4">
+        <div class="g-recaptcha" data-sitekey="6LcVqDQeAAAAAAdiKlRF9gTopMrtsxs14rdck1Ur" data-callback="verifyRecaptchaCallback" data-expired-callback="expiredRecaptchaCallback"></div>
+        <div class="help-block with-errors"></div>
+    </div>
+  
+      <div class="loginSubmit mt-4">
+        <input class="btn btn-danger btn-outline-light" type="submit" value="login">
+        
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
+ 
+<!-- Form Ending  -->
+
+{% endblock %}
+

@@ -1,0 +1,34 @@
+{% extends 'm3dja/base.html' %}
+{% block content %}
+<div class="container ">
+    <div class="d-flex justify-content-center">
+    <form method="POST" class="w-75 p-5">
+      {% csrf_token %}
+ 
+      <div class="row login mx-5 bg-success p-5">
+        <h5 class="text-center ">Add User</h5>
+        {% for field in form %}
+          
+            <label class="form-label">{{ field.label }}</label>
+            {{ field }}
+            {{ field.errors }}
+         
+        {% endfor %}
+        
+        {% if form.errors %}
+          <br>
+          {{ form.non_field_errors }}
+        {% endif %}
+     
+
+        <div class="loginSubmit mt-4">
+            <input class="btn btn-danger btn-outline-light" type="submit" value="Add user">
+            
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+   
+{% endblock %}
+
