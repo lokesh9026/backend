@@ -1,0 +1,6 @@
+admin : admin pass-123
+can see,staff(customers),order,add,delete product,can view profiles of customers.
+
+staff(customers):can place oder,edit there profile.
+username:max
+pass:lokesh@123
