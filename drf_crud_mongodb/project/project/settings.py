@@ -74,11 +74,22 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+      "ENGINE": "djongo",
+      "CLIENT":{
+      "host": "mongodb+srv://lokesh:123@cluster0.9az8u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+      "name":"myfirstdb",
+      "authMechanism":"SCRAM-SHA-1"
+      }
+   }
 }
 
 # Password validation

@@ -1,4 +1,4 @@
 admin : admin , pass:123
 user : rahul , pass:lokesh@123
 
-please start mongo compass , then connect through client id ...
+start the mongocompass to see the db
